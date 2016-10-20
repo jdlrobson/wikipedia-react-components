@@ -1,5 +1,6 @@
 {
   "name": "wikipedia-react-components",
+  "version": "0.8.0",
   "babel": {
     "presets": [
       "es2015",

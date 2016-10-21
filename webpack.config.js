@@ -12,7 +12,7 @@ module.exports = {
     },
     externals: {
       react: 'react',
-      reactDom: 'react-dom'
+      'react-dom': 'react-dom'
     },
     plugins: [
       new ExtractTextPlugin('styles.css', { allChunks: true }),

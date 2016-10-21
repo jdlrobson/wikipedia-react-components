@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.less'
 
-import ErrorBox from './ErrorBox'
+import ErrorBox from './../ErrorBox'
 
 export default React.createClass({
   componentWillMount() {

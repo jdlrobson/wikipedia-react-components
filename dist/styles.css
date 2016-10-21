@@ -510,6 +510,17 @@ input.mw-ui-input-large {
     padding: 0.5em 3.35em 0.4em 16px;
   }
 }
+.panel {
+  background-color: #fff;
+  padding: 1em;
+  border-bottom: 1px solid #eee;
+}
+.panel.panel-heading {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eeeeee;
+  padding: 20px 16px;
+  line-height: inherit;
+}
 input.search {
   padding: .5em 28px;
   background-position: left 6px center;

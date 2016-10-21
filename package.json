@@ -1,12 +1,18 @@
 {
   "name": "wikipedia-react-components",
-  "version": "0.8.0",
+  "version": "0.8.5",
   "babel": {
     "presets": [
       "es2015",
       "react"
     ]
   },
+  "scripts": {
+    "compile": "babel components --presets babel-preset-es2015 --out-dir dist",
+    "build": "npm run compile",
+    "prepublish": "npm run compile"
+  },
+  "main": "dist/index.js",
   "devDependencies": {
     "babel-core": "^6.16.0",
     "babel-loader": "^6.2.4",

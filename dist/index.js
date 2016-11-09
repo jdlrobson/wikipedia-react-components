@@ -225,7 +225,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  update: function update(ev) {
 	    var el = ev.currentTarget;
-	    var config = this.state.mobileOptions;
 	    if (this.props.onToggle) {
 	      this.props.onToggle(el.getAttribute('name'), el.checked);
 	    }
@@ -239,7 +238,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'div',
 	        { className: 'mw-ui-checkbox' },
 	        _react2.default.createElement('input', { type: 'checkbox', name: props.name,
-	          checked: props.checked,
+	          defaultChecked: props.checked,
 	          onChange: this.update }),
 	        _react2.default.createElement(
 	          'label',

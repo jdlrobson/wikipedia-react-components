@@ -17,7 +17,7 @@ export default React.createClass({
         action={'/' +props.language_project + '/Special:Search'}>
         <SearchInput onClick={props.onClickSearch} onSearch={props.onSearch}
           name="search"
-          placeholder={props.msg( 'search' )} defaultValue={props.defaultValue}
+          placeholder={props.placeholder} defaultValue={props.defaultValue}
           focusOnRender={props.focusOnRender} />
       </form>
     )

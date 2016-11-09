@@ -586,7 +586,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        action: '/' + props.language_project + '/Special:Search' },
 	      _react2.default.createElement(_SearchInput2.default, { onClick: props.onClickSearch, onSearch: props.onSearch,
 	        name: 'search',
-	        placeholder: props.msg('search'), defaultValue: props.defaultValue,
+	        placeholder: props.placeholder, defaultValue: props.defaultValue,
 	        focusOnRender: props.focusOnRender })
 	    );
 	  }

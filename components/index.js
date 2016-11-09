@@ -1,4 +1,5 @@
 import Button from './Button'
+import Checkbox from './Checkbox'
 import ErrorBox from './ErrorBox'
 import HorizontalList from './HorizontalList'
 import Icon from './Icon'
@@ -12,7 +13,7 @@ import SearchInput from './SearchInput'
 import TruncatedText from './TruncatedText'
 
 export {
-  Button, Icon, Input,
+  Button, Icon, Input, Checkbox,
   ErrorBox, IntermediateState,
   ListHeader, Panel,
   SearchInput, SearchForm,

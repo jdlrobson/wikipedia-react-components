@@ -1,0 +1,74 @@
+/*
+https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.checkbox&only=styles&debug=true
+*/
+.mw-ui-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+.client-js .mw-ui-checkbox:not( #noop ) {
+  position: relative;
+  display: table;
+}
+.client-js .mw-ui-checkbox:not( #noop ) * {
+  font: inherit;
+  vertical-align: middle;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"] {
+  opacity: 0;
+  z-index: 1;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  max-width: none;
+  margin: 0 0.4em 0 0;
+  display: table-cell;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"] + label {
+  display: table-cell;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"] + label::before {
+  content: '';
+  background-color: #fff;
+  background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A);
+  background-position: center center;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  -webkit-background-size: 0 0;
+  background-size: 0 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  margin-top: -1em;
+  border: 1px solid #72777d;
+  border-radius: 2px;
+  line-height: 2em;
+  cursor: pointer;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:checked + label::before {
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:active + label::before {
+  background-color: #dddddd;
+  border-color: #dddddd;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:focus + label::before {
+  border-width: 2px;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:focus:hover + label::before,
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:hover + label::before {
+  border-bottom-width: 3px;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:disabled + label::before {
+  cursor: default;
+  background-color: #eaecf0;
+  border-color: #eaecf0;
+}
+.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:disabled:checked + label::before {
+  background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A);
+}

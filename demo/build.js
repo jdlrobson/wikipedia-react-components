@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Button, ErrorBox, Panel,
-  Icon, Input,
+  Icon, Input, Checkbox,
   TruncatedText, SearchInput, SearchForm,
   ListHeader, IntermediateState,
   LinkList, HorizontalList
@@ -59,6 +59,15 @@ renderExample( Input, {
 renderExample( Input, {
   placeholder: 'Input.textarea',
   textarea: true
+});
+
+renderExample( Checkbox, {
+  label: 'Checkbox',
+  checked: true,
+  onToggle: function ( name, value ) {
+    console.log(name, value, 'changed')
+  },
+  name: 'checkbox-1'
 });
 
 renderExample( SearchInput, {

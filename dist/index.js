@@ -7,7 +7,7 @@
 		var a = typeof exports === 'object' ? factory(require("react"), require("react-dom")) : factory(root["react"], root["react-dom"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_22__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_24__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -59,53 +59,57 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.Input = exports.Icon = exports.Button = undefined;
+	exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
 
 	var _Button = __webpack_require__(1);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	var _ErrorBox = __webpack_require__(4);
+	var _Checkbox = __webpack_require__(4);
+
+	var _Checkbox2 = _interopRequireDefault(_Checkbox);
+
+	var _ErrorBox = __webpack_require__(6);
 
 	var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
-	var _HorizontalList = __webpack_require__(6);
+	var _HorizontalList = __webpack_require__(8);
 
 	var _HorizontalList2 = _interopRequireDefault(_HorizontalList);
 
-	var _Icon = __webpack_require__(8);
+	var _Icon = __webpack_require__(10);
 
 	var _Icon2 = _interopRequireDefault(_Icon);
 
-	var _Input = __webpack_require__(10);
+	var _Input = __webpack_require__(12);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _IntermediateState = __webpack_require__(12);
+	var _IntermediateState = __webpack_require__(14);
 
 	var _IntermediateState2 = _interopRequireDefault(_IntermediateState);
 
-	var _LinkList = __webpack_require__(14);
+	var _LinkList = __webpack_require__(16);
 
 	var _LinkList2 = _interopRequireDefault(_LinkList);
 
-	var _ListHeader = __webpack_require__(16);
+	var _ListHeader = __webpack_require__(18);
 
 	var _ListHeader2 = _interopRequireDefault(_ListHeader);
 
-	var _Panel = __webpack_require__(18);
+	var _Panel = __webpack_require__(20);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	var _SearchForm = __webpack_require__(20);
+	var _SearchForm = __webpack_require__(22);
 
 	var _SearchForm2 = _interopRequireDefault(_SearchForm);
 
-	var _SearchInput = __webpack_require__(21);
+	var _SearchInput = __webpack_require__(23);
 
 	var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
-	var _TruncatedText = __webpack_require__(25);
+	var _TruncatedText = __webpack_require__(27);
 
 	var _TruncatedText2 = _interopRequireDefault(_TruncatedText);
 
@@ -114,6 +118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Button = _Button2.default;
 	exports.Icon = _Icon2.default;
 	exports.Input = _Input2.default;
+	exports.Checkbox = _Checkbox2.default;
 	exports.ErrorBox = _ErrorBox2.default;
 	exports.IntermediateState = _IntermediateState2.default;
 	exports.ListHeader = _ListHeader2.default;
@@ -210,15 +215,41 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ErrorBox = function ErrorBox(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'errorbox' },
-	    props.msg
-	  );
-	};
-
-	exports.default = ErrorBox;
+	exports.default = _react2.default.createClass({
+	  displayName: 'Checkbox',
+	  componentWillMount: function componentWillMount() {
+	    this.setState({ jsEnabled: false });
+	  },
+	  componentDidMount: function componentDidMount() {
+	    this.setState({ jsEnabled: true });
+	  },
+	  update: function update(ev) {
+	    var el = ev.currentTarget;
+	    var config = this.state.mobileOptions;
+	    if (this.props.onToggle) {
+	      this.props.onToggle(el.getAttribute('name'), el.checked);
+	    }
+	  },
+	  render: function render() {
+	    var props = this.props;
+	    return _react2.default.createElement(
+	      'span',
+	      { className: this.state && this.state.jsEnabled ? 'client-js' : '' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'mw-ui-checkbox' },
+	        _react2.default.createElement('input', { type: 'checkbox', name: props.name,
+	          checked: props.checked,
+	          onChange: this.update }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: props.name },
+	          props.label
+	        )
+	      )
+	    );
+	  }
+	});
 
 /***/ },
 /* 5 */
@@ -244,24 +275,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _react2.default.createClass({
-	  displayName: 'HorizontalList',
+	var ErrorBox = function ErrorBox(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'errorbox' },
+	    props.msg
+	  );
+	};
 
-	  render: function render() {
-	    var cl = this.props.className ? this.props.className + ' hlist' : 'hlist';
-	    return _react2.default.createElement(
-	      'ul',
-	      { className: cl + (this.props.isSeparated ? ' separated' : ''), id: this.props.id },
-	      this.props.children.map(function (child, i) {
-	        return _react2.default.createElement(
-	          'li',
-	          { key: 'hlist-' + i },
-	          child
-	        );
-	      })
-	    );
-	  }
-	});
+	exports.default = ErrorBox;
 
 /***/ },
 /* 7 */
@@ -284,6 +306,49 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react2 = _interopRequireDefault(_react);
 
 	__webpack_require__(9);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'HorizontalList',
+
+	  render: function render() {
+	    var cl = this.props.className ? this.props.className + ' hlist' : 'hlist';
+	    return _react2.default.createElement(
+	      'ul',
+	      { className: cl + (this.props.isSeparated ? ' separated' : ''), id: this.props.id },
+	      this.props.children.map(function (child, i) {
+	        return _react2.default.createElement(
+	          'li',
+	          { key: 'hlist-' + i },
+	          child
+	        );
+	      })
+	    );
+	  }
+	});
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(11);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -332,13 +397,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -351,7 +416,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(11);
+	__webpack_require__(13);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -375,13 +440,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Input;
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -394,9 +459,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(13);
+	__webpack_require__(15);
 
-	var _ErrorBox = __webpack_require__(4);
+	var _ErrorBox = __webpack_require__(6);
 
 	var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
@@ -427,50 +492,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(15);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _react2.default.createClass({
-	  displayName: 'LinkList',
-
-	  render: function render() {
-	    var className = this.props.className ? this.props.className + ' ' : '';
-	    className += 'link-list';
-	    return _react2.default.createElement(
-	      'ul',
-	      { className: className },
-	      this.props.children.map(function (child, i) {
-	        return _react2.default.createElement(
-	          'li',
-	          { key: 'link-list-' + i },
-	          child
-	        );
-	      })
-	    );
-	  }
-	});
-
-/***/ },
 /* 15 */
 /***/ function(module, exports) {
 
@@ -494,15 +515,25 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ListHeader = function ListHeader(props) {
-	  return _react2.default.createElement(
-	    'h2',
-	    { className: 'list-header' },
-	    props.children
-	  );
-	};
+	exports.default = _react2.default.createClass({
+	  displayName: 'LinkList',
 
-	exports.default = ListHeader;
+	  render: function render() {
+	    var className = this.props.className ? this.props.className + ' ' : '';
+	    className += 'link-list';
+	    return _react2.default.createElement(
+	      'ul',
+	      { className: className },
+	      this.props.children.map(function (child, i) {
+	        return _react2.default.createElement(
+	          'li',
+	          { key: 'link-list-' + i },
+	          child
+	        );
+	      })
+	    );
+	  }
+	});
 
 /***/ },
 /* 17 */
@@ -528,20 +559,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = function (props) {
-	  var className = 'panel';
-	  if (props.isHeading) {
-	    className += ' panel-heading';
-	  }
-	  if (props.className) {
-	    className += props.className;
-	  }
+	var ListHeader = function ListHeader(props) {
 	  return _react2.default.createElement(
-	    'div',
-	    { className: className },
+	    'h2',
+	    { className: 'list-header' },
 	    props.children
 	  );
 	};
+
+	exports.default = ListHeader;
 
 /***/ },
 /* 19 */
@@ -563,11 +589,50 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SearchInput = __webpack_require__(21);
+	__webpack_require__(21);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+	  var className = 'panel';
+	  if (props.isHeading) {
+	    className += ' panel-heading';
+	  }
+	  if (props.className) {
+	    className += props.className;
+	  }
+	  return _react2.default.createElement(
+	    'div',
+	    { className: className },
+	    props.children
+	  );
+	};
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SearchInput = __webpack_require__(23);
 
 	var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
-	__webpack_require__(24);
+	__webpack_require__(26);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -593,7 +658,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 21 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -606,11 +671,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(22);
+	var _reactDom = __webpack_require__(24);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	__webpack_require__(23);
+	__webpack_require__(25);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -642,25 +707,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 22 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_22__;
-
-/***/ },
-/* 23 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
 /* 24 */
 /***/ function(module, exports) {
 
-	// removed by extract-text-webpack-plugin
+	module.exports = __WEBPACK_EXTERNAL_MODULE_24__;
 
 /***/ },
 /* 25 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -673,7 +738,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(26);
+	__webpack_require__(28);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -688,7 +753,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = TruncatedText;
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

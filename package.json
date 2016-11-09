@@ -10,7 +10,8 @@
   },
   "scripts": {
     "compile": "webpack --content-base dist/",
-    "build": "npm run compile",
+    "build": "npm run compile && npm run demo",
+    "demo": "webpack --content-base dist/ --config webpack.config.demo.js",
     "prepublish": "npm run compile"
   },
   "main": "dist/index.js",

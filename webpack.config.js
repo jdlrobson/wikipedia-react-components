@@ -3,11 +3,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: {
-      main: './components/index.js'
+      index: './components/index.js'
     },
     output: {
       path: __dirname + '/dist/',
-      filename: 'index.js',
+      filename: '[name].js',
       libraryTarget: 'umd'
     },
     externals: {

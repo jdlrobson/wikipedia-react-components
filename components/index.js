@@ -1,5 +1,7 @@
 import Button from './Button'
 import Card from './Card'
+import CardDiff from './CardDiff'
+import CardWithLocation from './CardWithLocation'
 import Checkbox from './Checkbox'
 import ErrorBox from './ErrorBox'
 import HorizontalList from './HorizontalList'
@@ -16,6 +18,7 @@ import TruncatedText from './TruncatedText'
 export {
   Button, Icon, Input, Checkbox,
   Card,
+  CardWithLocation, CardDiff,
   ErrorBox, IntermediateState,
   ListHeader, Panel,
   SearchInput, SearchForm,

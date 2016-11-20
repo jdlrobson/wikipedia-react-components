@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import {Button, ErrorBox, Panel,
   Icon, Input, Checkbox,
   Card,
+  CardWithLocation, CardDiff,
   TruncatedText, SearchInput, SearchForm,
   ListHeader, IntermediateState,
   LinkList, HorizontalList
@@ -147,7 +148,7 @@ renderExample( Card, {
     alert(0);
   },
   thumbnail: {
-    source: 'image.jpg'
+    source: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/80px-Wikipedia-logo-v2.svg.png'
   },
   extracts: [
     'Test',
@@ -164,6 +165,31 @@ renderExample( Card, {
     'Test',
     'Hello world'
   ]
+});
+
+newLine( 'Specialised cards', '3' );
+
+paragraph( 'Cards exist for locations:' );
+
+renderExample( CardWithLocation, {
+  title: 'CardWithLocation',
+  coordinates: {
+    dist: 2000
+  },
+  extracts: [
+    'The distance expressed in the `coordinates.dist` parameter in meters will render below extracts.'
+  ]
+});
+
+paragraph( 'and links to diffs' );
+
+renderExample( CardDiff, {
+  user: 'User Smith',
+  comment: 'Fixed a typo.',
+  sizediff: -1200,
+  minor: true,
+  url: 'http://trending.wmflabs.org/en.wikipedia/Special:MobileDiff/1',
+  timestamp: '2016-11-20T21:57:43.558Z'
 });
 
 newLine( 'Misc' );

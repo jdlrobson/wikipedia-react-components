@@ -273,6 +273,78 @@ a.mw-ui-button:focus {
 .mw-ui-button-group .is-on .button {
   cursor: default;
 }
+.truncated-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.card {
+  background-color: #fff;
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  margin: 0;
+  height: 80px;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.card .indicator {
+  top: 0;
+  left: 0;
+  position: absolute;
+  right: 80px;
+}
+.card-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.card h3 {
+  font-family: inherit;
+  font-size: 1em;
+  max-height: 2.6em;
+  line-height: 1.3;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  font-weight: 500;
+}
+.card h3 a:hover,
+.card h3 a:visited,
+.card h3 a {
+  color: inherit;
+}
+.card-thumb {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  background-size: cover;
+  float: left;
+  height: 100%;
+  width: 80px;
+  margin-right: 10px;
+}
+.card-detail {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card-extract {
+  color: #888;
+  font-size: .8em;
+  padding-right: .2em;
+  margin-top: 2px;
+}
+.card-extract > * {
+  display: block;
+}
 /*
 https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.checkbox&only=styles&debug=true
 */
@@ -613,11 +685,4 @@ input.search {
 }
 .search-form input {
   box-sizing: border-box;
-}
-.truncated-text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  -webkit-text-overflow: ellipsis;
-  text-overflow: ellipsis;
 }

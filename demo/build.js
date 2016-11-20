@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Button, ErrorBox, Panel,
   Icon, Input, Checkbox,
+  Card,
   TruncatedText, SearchInput, SearchForm,
   ListHeader, IntermediateState,
   LinkList, HorizontalList
@@ -124,6 +125,22 @@ renderExample( HorizontalList, {
   ]
 });
 
+newLine( 'Cards' );
+
+renderExample( Card, {
+  title: 'React',
+  url: 'http://wikipedia.org/wiki/React',
+  onClick: function () {
+    alert(0);
+  },
+  thumbnail: {
+    source: 'image.jpg'
+  },
+  extracts: [
+    'Test',
+    'Hello world'
+  ]
+});
 
 newLine( 'Misc' );
 

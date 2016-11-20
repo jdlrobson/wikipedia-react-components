@@ -7,7 +7,7 @@
 		var a = typeof exports === 'object' ? factory(require("react"), require("react-dom")) : factory(root["react"], root["react-dom"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_28__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_31__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
+	exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.CardDiff = exports.CardWithLocation = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
 
 	var _Button = __webpack_require__(1);
 
@@ -69,47 +69,55 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _Card2 = _interopRequireDefault(_Card);
 
-	var _Checkbox = __webpack_require__(8);
+	var _CardDiff = __webpack_require__(8);
+
+	var _CardDiff2 = _interopRequireDefault(_CardDiff);
+
+	var _CardWithLocation = __webpack_require__(12);
+
+	var _CardWithLocation2 = _interopRequireDefault(_CardWithLocation);
+
+	var _Checkbox = __webpack_require__(13);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _ErrorBox = __webpack_require__(10);
+	var _ErrorBox = __webpack_require__(15);
 
 	var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
-	var _HorizontalList = __webpack_require__(12);
+	var _HorizontalList = __webpack_require__(17);
 
 	var _HorizontalList2 = _interopRequireDefault(_HorizontalList);
 
-	var _Icon = __webpack_require__(14);
+	var _Icon = __webpack_require__(10);
 
 	var _Icon2 = _interopRequireDefault(_Icon);
 
-	var _Input = __webpack_require__(16);
+	var _Input = __webpack_require__(19);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _IntermediateState = __webpack_require__(18);
+	var _IntermediateState = __webpack_require__(21);
 
 	var _IntermediateState2 = _interopRequireDefault(_IntermediateState);
 
-	var _LinkList = __webpack_require__(20);
+	var _LinkList = __webpack_require__(23);
 
 	var _LinkList2 = _interopRequireDefault(_LinkList);
 
-	var _ListHeader = __webpack_require__(22);
+	var _ListHeader = __webpack_require__(25);
 
 	var _ListHeader2 = _interopRequireDefault(_ListHeader);
 
-	var _Panel = __webpack_require__(24);
+	var _Panel = __webpack_require__(27);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	var _SearchForm = __webpack_require__(26);
+	var _SearchForm = __webpack_require__(29);
 
 	var _SearchForm2 = _interopRequireDefault(_SearchForm);
 
-	var _SearchInput = __webpack_require__(27);
+	var _SearchInput = __webpack_require__(30);
 
 	var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
@@ -124,6 +132,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Input = _Input2.default;
 	exports.Checkbox = _Checkbox2.default;
 	exports.Card = _Card2.default;
+	exports.CardWithLocation = _CardWithLocation2.default;
+	exports.CardDiff = _CardDiff2.default;
 	exports.ErrorBox = _ErrorBox2.default;
 	exports.IntermediateState = _IntermediateState2.default;
 	exports.ListHeader = _ListHeader2.default;
@@ -366,48 +376,92 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	__webpack_require__(9);
 
+	var _Icon = __webpack_require__(10);
+
+	var _Icon2 = _interopRequireDefault(_Icon);
+
+	var _Card = __webpack_require__(4);
+
+	var _Card2 = _interopRequireDefault(_Card);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _react2.default.createClass({
-	  displayName: 'Checkbox',
-	  componentWillMount: function componentWillMount() {
-	    this.setState({ jsEnabled: false });
-	  },
-	  componentDidMount: function componentDidMount() {
-	    this.setState({ jsEnabled: true });
-	  },
-	  update: function update(ev) {
-	    var el = ev.currentTarget;
-	    if (this.props.onToggle) {
-	      this.props.onToggle(el.getAttribute('name'), el.checked);
-	    }
-	  },
-	  render: function render() {
-	    var props = this.props;
-	    return _react2.default.createElement(
-	      'span',
-	      { className: this.state && this.state.jsEnabled ? 'client-js' : '' },
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'mw-ui-checkbox' },
-	        _react2.default.createElement('input', { type: 'checkbox', name: props.name,
-	          defaultChecked: props.checked,
-	          onChange: this.update }),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: props.name },
-	          props.label
-	        )
-	      )
-	    );
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CardDiff = function (_Component) {
+	  _inherits(CardDiff, _Component);
+
+	  function CardDiff() {
+	    _classCallCheck(this, CardDiff);
+
+	    return _possibleConstructorReturn(this, (CardDiff.__proto__ || Object.getPrototypeOf(CardDiff)).apply(this, arguments));
 	  }
-	});
+
+	  _createClass(CardDiff, [{
+	    key: 'render',
+	    value: function render() {
+	      var props = this.props;
+	      var username = props.user;
+	      var extracts = [_react2.default.createElement(
+	        'span',
+	        { className: 'edit-summary' },
+	        props.comment || 'No edit summary'
+	      )];
+	      if (!props.title && username) {
+	        // FIXME: Support anonymous users too
+	        extracts.unshift(_react2.default.createElement(_Icon2.default, { glyph: 'user', type: 'before', label: username, className: 'mw-mf-user',
+	          href: '/' + props.language_project + '/User:' + encodeURIComponent(username) }));
+	      }
+	      var date = new Date(props.timestamp);
+	      var bytes = props.newlen ? props.newlen - props.oldlen : props.sizediff;
+	      var bytesDeltaClass = bytes < 0 ? 'bytes-removed' : 'bytes-added';
+	      var metaInfo = _react2.default.createElement(
+	        'div',
+	        { className: 'meta' },
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'timestamp' },
+	          date.getUTCHours(),
+	          ':',
+	          date.getUTCMinutes()
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: bytesDeltaClass },
+	          bytes
+	        )
+	      );
+	      if (props.minor) {
+	        extracts.push(_react2.default.createElement(
+	          'abbr',
+	          { className: 'minor-edit', title: 'This is a minor edit' },
+	          'm'
+	        ));
+	      }
+
+	      return _react2.default.createElement(_Card2.default, _extends({ className: 'card-diff' }, props, {
+	        extracts: extracts, metaInfo: metaInfo, url: props.url }));
+	    }
+	  }]);
+
+	  return CardDiff;
+	}(_react.Component);
+
+	exports.default = CardDiff;
 
 /***/ },
 /* 9 */
@@ -430,83 +484,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react2 = _interopRequireDefault(_react);
 
 	__webpack_require__(11);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ErrorBox = function ErrorBox(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'errorbox' },
-	    props.msg
-	  );
-	};
-
-	exports.default = ErrorBox;
-
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(13);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _react2.default.createClass({
-	  displayName: 'HorizontalList',
-
-	  render: function render() {
-	    var cl = this.props.className ? this.props.className + ' hlist' : 'hlist';
-	    return _react2.default.createElement(
-	      'ul',
-	      { className: cl + (this.props.isSeparated ? ' separated' : ''), id: this.props.id },
-	      this.props.children.map(function (child, i) {
-	        return _react2.default.createElement(
-	          'li',
-	          { key: 'hlist-' + i },
-	          child
-	        );
-	      })
-	    );
-	  }
-	});
-
-/***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(15);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -555,13 +532,81 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 15 */
+/* 11 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 16 */
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Card = __webpack_require__(4);
+
+	var _Card2 = _interopRequireDefault(_Card);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CardWithLocation = function (_Component) {
+	  _inherits(CardWithLocation, _Component);
+
+	  function CardWithLocation() {
+	    _classCallCheck(this, CardWithLocation);
+
+	    return _possibleConstructorReturn(this, (CardWithLocation.__proto__ || Object.getPrototypeOf(CardWithLocation)).apply(this, arguments));
+	  }
+
+	  _createClass(CardWithLocation, [{
+	    key: 'render',
+	    value: function render() {
+	      var dist,
+	          units = 'm',
+	          props = this.props,
+	          extracts = props.description ? [props.description] : [];
+	      if (props.coordinates && props.coordinates.dist) {
+	        dist = parseInt(props.coordinates.dist, 10);
+	        if (dist >= 1000) {
+	          dist = parseInt(dist / 1000, 10);
+	          units = 'km';
+	        }
+	        extracts.push(dist + units);
+	      }
+	      return _react2.default.createElement(_Card2.default, _extends({}, props, { extracts: extracts }));
+	    }
+	  }]);
+
+	  return CardWithLocation;
+	}(_react.Component);
+
+	CardWithLocation.defaultProps = {
+	  terms: null,
+	  thumbnail: null
+	};
+
+	exports.default = CardWithLocation;
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -574,7 +619,143 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(17);
+	__webpack_require__(14);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Checkbox',
+	  componentWillMount: function componentWillMount() {
+	    this.setState({ jsEnabled: false });
+	  },
+	  componentDidMount: function componentDidMount() {
+	    this.setState({ jsEnabled: true });
+	  },
+	  update: function update(ev) {
+	    var el = ev.currentTarget;
+	    if (this.props.onToggle) {
+	      this.props.onToggle(el.getAttribute('name'), el.checked);
+	    }
+	  },
+	  render: function render() {
+	    var props = this.props;
+	    return _react2.default.createElement(
+	      'span',
+	      { className: this.state && this.state.jsEnabled ? 'client-js' : '' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'mw-ui-checkbox' },
+	        _react2.default.createElement('input', { type: 'checkbox', name: props.name,
+	          defaultChecked: props.checked,
+	          onChange: this.update }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: props.name },
+	          props.label
+	        )
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(16);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ErrorBox = function ErrorBox(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'errorbox' },
+	    props.msg
+	  );
+	};
+
+	exports.default = ErrorBox;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(18);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'HorizontalList',
+
+	  render: function render() {
+	    var cl = this.props.className ? this.props.className + ' hlist' : 'hlist';
+	    return _react2.default.createElement(
+	      'ul',
+	      { className: cl + (this.props.isSeparated ? ' separated' : ''), id: this.props.id },
+	      this.props.children.map(function (child, i) {
+	        return _react2.default.createElement(
+	          'li',
+	          { key: 'hlist-' + i },
+	          child
+	        );
+	      })
+	    );
+	  }
+	});
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(20);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -598,13 +779,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Input;
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -617,9 +798,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(19);
+	__webpack_require__(22);
 
-	var _ErrorBox = __webpack_require__(10);
+	var _ErrorBox = __webpack_require__(15);
 
 	var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
@@ -650,13 +831,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -669,7 +850,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(21);
+	__webpack_require__(24);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -694,13 +875,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 22 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -713,7 +894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(23);
+	__webpack_require__(26);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -728,13 +909,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ListHeader;
 
 /***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -747,7 +928,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(25);
+	__webpack_require__(28);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -767,13 +948,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -786,11 +967,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SearchInput = __webpack_require__(27);
+	var _SearchInput = __webpack_require__(30);
 
 	var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
-	__webpack_require__(30);
+	__webpack_require__(33);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -816,7 +997,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -829,11 +1010,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(28);
+	var _reactDom = __webpack_require__(31);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	__webpack_require__(29);
+	__webpack_require__(32);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -865,19 +1046,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_28__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_31__;
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 30 */
+/* 33 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

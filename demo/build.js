@@ -10,15 +10,22 @@ import {Button, ErrorBox, Panel,
 
 var container = document.getElementById('examples');
 
-function newLine( headingText ) {
+function newLine( headingText, headingLevel ) {
   var heading;
+  headingLevel = headingLevel || '2';
 
   container.appendChild( document.createElement( 'hr' ) );
   if ( headingText ) {
-    heading = document.createElement( 'h2' );
+    heading = document.createElement( 'h' + headingLevel );
     heading.textContent = headingText;
     container.appendChild( heading );
   }
+}
+
+function paragraph( text ) {
+  var p = document.createElement( 'p' );
+  p.textContent = text;
+  container.appendChild( p );
 }
 
 function renderExample( ComponentClass, data ) {
@@ -41,12 +48,16 @@ renderExample( Button, {
 
 newLine( 'Icon' );
 
-renderExample( Icon, {
-  glyph: 'myicon'
-});
+paragraph( 'Icons will require the use of an icon pack. You can have a standalone icon without text:' );
 
 renderExample( Icon, {
-  glyph: 'myicon',
+  glyph: 'language'
+});
+
+paragraph( 'Or render an icon alongside a label using the `before` type.' );
+
+renderExample( Icon, {
+  glyph: 'language',
   type: 'before',
   label: 'Icon label <before>'
 });
@@ -127,6 +138,8 @@ renderExample( HorizontalList, {
 
 newLine( 'Cards' );
 
+paragraph( 'Cards can be rendered with thumbnails and onClick events...' );
+
 renderExample( Card, {
   title: 'React',
   url: 'http://wikipedia.org/wiki/React',
@@ -136,6 +149,17 @@ renderExample( Card, {
   thumbnail: {
     source: 'image.jpg'
   },
+  extracts: [
+    'Test',
+    'Hello world'
+  ]
+});
+
+paragraph( '... or without thumbnails:' );
+
+renderExample( Card, {
+  title: 'Card without thumbnail',
+  showPlaceholderIllustration: false,
   extracts: [
     'Test',
     'Hello world'

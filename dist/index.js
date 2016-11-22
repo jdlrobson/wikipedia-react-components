@@ -419,14 +419,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function render() {
 	      var props = this.props;
 	      var username = props.user;
+	      var glyph = props.anon ? 'anonymous' : 'user';
 	      var extracts = [_react2.default.createElement(
 	        'span',
 	        { className: 'edit-summary' },
 	        props.comment || 'No edit summary'
 	      )];
-	      if (!props.title && username) {
+	      if (username) {
 	        // FIXME: Support anonymous users too
-	        extracts.unshift(_react2.default.createElement(_Icon2.default, { glyph: 'user', type: 'before', label: username, className: 'mw-mf-user',
+	        extracts.unshift(_react2.default.createElement(_Icon2.default, { glyph: glyph, type: 'before', label: username, className: 'mw-mf-user',
 	          href: '/' + props.language_project + '/User:' + encodeURIComponent(username) }));
 	      }
 	      var date = new Date(props.timestamp);

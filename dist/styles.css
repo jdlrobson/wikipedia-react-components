@@ -360,8 +360,9 @@ a.mw-ui-button:focus {
   line-height: 1.2;
   margin: 0.5em 0;
 }
-.card-diff h2 {
+.card-diff h3 {
   font-weight: bold;
+  margin: 0.5em 0;
 }
 .card-diff .bytes-removed {
   color: #dc2e16;

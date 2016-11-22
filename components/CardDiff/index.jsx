@@ -9,12 +9,13 @@ class CardDiff extends Component {
   render(){
     var props = this.props;
     var username = props.user;
+    var glyph = props.anon ? 'anonymous' : 'user';
     var extracts = [
       <span className="edit-summary">{props.comment || 'No edit summary'}</span>
     ];
-    if ( !props.title && username ) {
+    if ( username ) {
       // FIXME: Support anonymous users too
-      extracts.unshift( <Icon glyph="user" type="before" label={username} className="mw-mf-user"
+      extracts.unshift( <Icon glyph={glyph} type="before" label={username} className="mw-mf-user"
         href={'/' + props.language_project + '/User:' + encodeURIComponent( username )} /> );
     }
     var date = new Date( props.timestamp );

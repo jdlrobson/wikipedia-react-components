@@ -15,7 +15,7 @@ class Card extends Component {
     var meta = this.props.metaInfo;
     var styles = {
       backgroundImage: this.props.thumbnail ?
-        'url(' + this.props.thumbnail.source + ')'
+        'url("' + this.props.thumbnail.source + '")'
         : meta ? 'none' : BG_PLACEHOLDER
     };
     var extracts = this.props.extracts.map( function ( item, i ) {

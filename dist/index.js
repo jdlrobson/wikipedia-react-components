@@ -262,7 +262,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var className = this.props.className ? 'card ' + this.props.className : 'card';
 	      var meta = this.props.metaInfo;
 	      var styles = {
-	        backgroundImage: this.props.thumbnail ? 'url(' + this.props.thumbnail.source + ')' : meta ? 'none' : BG_PLACEHOLDER
+	        backgroundImage: this.props.thumbnail ? 'url("' + this.props.thumbnail.source + '")' : meta ? 'none' : BG_PLACEHOLDER
 	      };
 	      var extracts = this.props.extracts.map(function (item, i) {
 	        return _react2.default.createElement(

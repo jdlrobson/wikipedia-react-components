@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Button, ErrorBox, Panel,
   Icon, Input, Checkbox,
-  Card,
+  Card, CardList,
   CardWithLocation, CardDiff,
   TruncatedText, SearchInput, SearchForm,
   ListHeader, IntermediateState,
@@ -10,6 +10,49 @@ import {Button, ErrorBox, Panel,
 } from './../components'
 
 var container = document.getElementById('examples');
+
+const EXAMPLE_CARD_NO_THUMBNAIL = {
+  title: 'Card without thumbnail',
+  showPlaceholderIllustration: false,
+  extracts: [
+    'Test',
+    'Hello world'
+  ]
+};
+
+const EXAMPLE_CARD_DIFF = {
+  user: 'User Smith',
+  comment: 'Fixed a typo.',
+  sizediff: -1200,
+  minor: true,
+  url: 'http://trending.wmflabs.org/en.wikipedia/Special:MobileDiff/1',
+  timestamp: '2016-11-20T21:57:43.558Z'
+};
+
+const EXAMPLE_CARD_THUMBNAIL = {
+  title: 'React',
+  url: 'http://wikipedia.org/wiki/React',
+  onClick: function () {
+    alert(0);
+  },
+  thumbnail: {
+    source: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/80px-Wikipedia-logo-v2.svg.png'
+  },
+  extracts: [
+    'Test',
+    'Hello world'
+  ]
+};
+
+const EXAMPLE_CARD_LOCATION = {
+  title: 'CardWithLocation',
+  coordinates: {
+    dist: 2000
+  },
+  extracts: [
+    'The distance expressed in the `coordinates.dist` parameter in meters will render below extracts.'
+  ]
+};
 
 function newLine( headingText, headingLevel ) {
   var heading;
@@ -112,6 +155,27 @@ renderExample( Panel, {
   ]
 });
 
+newLine( 'Cards' );
+
+paragraph( 'Cards can be rendered with thumbnails and onClick events...' );
+
+renderExample( Card, EXAMPLE_CARD_THUMBNAIL );
+
+paragraph( '... or without thumbnails:' );
+
+renderExample( Card, EXAMPLE_CARD_NO_THUMBNAIL);
+
+newLine( 'Specialised cards', '3' );
+
+paragraph( 'Cards exist for locations:' );
+
+renderExample( CardWithLocation, EXAMPLE_CARD_LOCATION);
+
+paragraph( 'and links to diffs' );
+
+renderExample( CardDiff, EXAMPLE_CARD_DIFF);
+
+
 newLine( 'Lists' );
 
 renderExample( ListHeader, {
@@ -137,59 +201,55 @@ renderExample( HorizontalList, {
   ]
 });
 
-newLine( 'Cards' );
+paragraph( 'A CardList can contain children other than Card such as IntermediateState...' );
 
-paragraph( 'Cards can be rendered with thumbnails and onClick events...' );
-
-renderExample( Card, {
-  title: 'React',
-  url: 'http://wikipedia.org/wiki/React',
-  onClick: function () {
-    alert(0);
-  },
-  thumbnail: {
-    source: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/80px-Wikipedia-logo-v2.svg.png'
-  },
-  extracts: [
-    'Test',
-    'Hello world'
+renderExample( CardList, {
+  children: [
+      <IntermediateState msg="Loading cards" />
   ]
 });
 
-paragraph( '... or without thumbnails:' );
+paragraph( '... or an ErrorBox' );
 
-renderExample( Card, {
-  title: 'Card without thumbnail',
-  showPlaceholderIllustration: false,
-  extracts: [
-    'Test',
-    'Hello world'
+renderExample( CardList, {
+  children: [
+      <ErrorBox msg="An error occurred while loading your cards." />
   ]
 });
 
-newLine( 'Specialised cards', '3' );
+paragraph( 'Use them to render lists of Cards (responsive)' );
 
-paragraph( 'Cards exist for locations:' );
-
-renderExample( CardWithLocation, {
-  title: 'CardWithLocation',
-  coordinates: {
-    dist: 2000
-  },
-  extracts: [
-    'The distance expressed in the `coordinates.dist` parameter in meters will render below extracts.'
+renderExample( CardList, {
+  ordered: false,
+  children: [
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 1" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 2" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 3" />
   ]
 });
 
-paragraph( 'and links to diffs' );
+paragraph( 'You can also force them to be ordered to always be in a single column:' );
 
-renderExample( CardDiff, {
-  user: 'User Smith',
-  comment: 'Fixed a typo.',
-  sizediff: -1200,
-  minor: true,
-  url: 'http://trending.wmflabs.org/en.wikipedia/Special:MobileDiff/1',
-  timestamp: '2016-11-20T21:57:43.558Z'
+renderExample( CardList, {
+  ordered: true,
+  children: [
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 1" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 2" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 3" />
+  ]
+});
+
+paragraph( 'Or to render CardDiffs or any other Card type. You can also pass a ListHeader.' );
+
+renderExample( CardList, {
+  ordered: true,
+  children: [
+    <ListHeader>Header</ListHeader>,
+    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 1" />,
+    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 2" />,
+    <ListHeader>Another header</ListHeader>,
+    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 3" />
+  ]
 });
 
 newLine( 'Misc' );

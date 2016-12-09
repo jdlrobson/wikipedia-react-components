@@ -1,0 +1,50 @@
+.card-list {
+  box-shadow: 0 3px 3px 0 rgba(117, 117, 117, 0.3);
+  margin-bottom: 20px;
+
+  &.diff-list {
+
+    .card-thumb {
+      background-color: transparent;
+    }
+  }
+}
+.card ~ .card {
+  border-top: 0;
+}
+
+.card-list .gutter {
+  width: 100%;
+  visibility: hidden;
+}
+
+.card-list-empty {
+  color: #333;
+  text-align: center;
+  font-size: .9em;
+}
+
+@media (min-width: 720px) {
+  .card-list {
+    box-shadow: none;
+  }
+
+  .card-list-unordered {
+    border-top: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    font-size: 1em;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-list-unordered .card {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 auto 10px auto;
+    width: 30%;
+    max-width: 30%;
+    border-radius: 2px;
+  }
+}

@@ -7,7 +7,7 @@
 		var a = typeof exports === 'object' ? factory(require("react"), require("react-dom")) : factory(root["react"], root["react-dom"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_31__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_33__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.CardDiff = exports.CardWithLocation = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
+	exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.CardDiff = exports.CardWithLocation = exports.CardList = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
 
 	var _Button = __webpack_require__(1);
 
@@ -73,19 +73,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _CardDiff2 = _interopRequireDefault(_CardDiff);
 
-	var _CardWithLocation = __webpack_require__(12);
+	var _CardList = __webpack_require__(12);
+
+	var _CardList2 = _interopRequireDefault(_CardList);
+
+	var _CardWithLocation = __webpack_require__(14);
 
 	var _CardWithLocation2 = _interopRequireDefault(_CardWithLocation);
 
-	var _Checkbox = __webpack_require__(13);
+	var _Checkbox = __webpack_require__(15);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _ErrorBox = __webpack_require__(15);
+	var _ErrorBox = __webpack_require__(17);
 
 	var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
-	var _HorizontalList = __webpack_require__(17);
+	var _HorizontalList = __webpack_require__(19);
 
 	var _HorizontalList2 = _interopRequireDefault(_HorizontalList);
 
@@ -93,31 +97,31 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _Icon2 = _interopRequireDefault(_Icon);
 
-	var _Input = __webpack_require__(19);
+	var _Input = __webpack_require__(21);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _IntermediateState = __webpack_require__(21);
+	var _IntermediateState = __webpack_require__(23);
 
 	var _IntermediateState2 = _interopRequireDefault(_IntermediateState);
 
-	var _LinkList = __webpack_require__(23);
+	var _LinkList = __webpack_require__(25);
 
 	var _LinkList2 = _interopRequireDefault(_LinkList);
 
-	var _ListHeader = __webpack_require__(25);
+	var _ListHeader = __webpack_require__(27);
 
 	var _ListHeader2 = _interopRequireDefault(_ListHeader);
 
-	var _Panel = __webpack_require__(27);
+	var _Panel = __webpack_require__(29);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	var _SearchForm = __webpack_require__(29);
+	var _SearchForm = __webpack_require__(31);
 
 	var _SearchForm2 = _interopRequireDefault(_SearchForm);
 
-	var _SearchInput = __webpack_require__(30);
+	var _SearchInput = __webpack_require__(32);
 
 	var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
@@ -132,6 +136,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Input = _Input2.default;
 	exports.Checkbox = _Checkbox2.default;
 	exports.Card = _Card2.default;
+	exports.CardList = _CardList2.default;
 	exports.CardWithLocation = _CardWithLocation2.default;
 	exports.CardDiff = _CardDiff2.default;
 	exports.ErrorBox = _ErrorBox2.default;
@@ -551,6 +556,54 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(13);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'CardList',
+
+	  render: function render() {
+	    var props = this.props;
+	    var isUnordered = !props.ordered;
+	    var cards = props.cards;
+	    var className = 'card-list component-card-list' + (isUnordered ? ' card-list-unordered' : '');
+
+	    if (props.className) {
+	      className += ' ' + props.className;
+	    }
+	    return props.children.length ? _react2.default.createElement(
+	      'div',
+	      { className: className },
+	      props.children
+	    ) : _react2.default.createElement(
+	      'div',
+	      { className: 'card-list-empty' },
+	      props.emptyMessage
+	    );
+	  }
+	});
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -610,7 +663,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = CardWithLocation;
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -623,7 +676,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(14);
+	__webpack_require__(16);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -663,40 +716,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 14 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(16);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ErrorBox = function ErrorBox(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'errorbox' },
-	    props.msg
-	  );
-	};
-
-	exports.default = ErrorBox;
-
-/***/ },
 /* 16 */
 /***/ function(module, exports) {
 
@@ -720,24 +739,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _react2.default.createClass({
-	  displayName: 'HorizontalList',
+	var ErrorBox = function ErrorBox(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'errorbox' },
+	    props.msg
+	  );
+	};
 
-	  render: function render() {
-	    var cl = this.props.className ? this.props.className + ' hlist' : 'hlist';
-	    return _react2.default.createElement(
-	      'ul',
-	      { className: cl + (this.props.isSeparated ? ' separated' : ''), id: this.props.id },
-	      this.props.children.map(function (child, i) {
-	        return _react2.default.createElement(
-	          'li',
-	          { key: 'hlist-' + i },
-	          child
-	        );
-	      })
-	    );
-	  }
-	});
+	exports.default = ErrorBox;
 
 /***/ },
 /* 18 */
@@ -763,24 +773,24 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Input = function Input(props) {
-	  var suffix = props.className ? ' ' + props.className : '';
-	  var inputProps = {
-	    className: 'mw-ui-input' + suffix,
-	    placeholder: props.placeholder,
-	    onInput: props.onInput,
-	    disabled: props.disabled,
-	    defaultValue: props.defaultValue
-	  };
+	exports.default = _react2.default.createClass({
+	  displayName: 'HorizontalList',
 
-	  if (props.textarea) {
-	    return _react2.default.createElement('textarea', inputProps);
-	  } else {
-	    return _react2.default.createElement('input', inputProps);
+	  render: function render() {
+	    var cl = this.props.className ? this.props.className + ' hlist' : 'hlist';
+	    return _react2.default.createElement(
+	      'ul',
+	      { className: cl + (this.props.isSeparated ? ' separated' : ''), id: this.props.id },
+	      this.props.children.map(function (child, i) {
+	        return _react2.default.createElement(
+	          'li',
+	          { key: 'hlist-' + i },
+	          child
+	        );
+	      })
+	    );
 	  }
-	};
-
-	exports.default = Input;
+	});
 
 /***/ },
 /* 20 */
@@ -804,7 +814,50 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	__webpack_require__(22);
 
-	var _ErrorBox = __webpack_require__(15);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Input = function Input(props) {
+	  var suffix = props.className ? ' ' + props.className : '';
+	  var inputProps = {
+	    className: 'mw-ui-input' + suffix,
+	    placeholder: props.placeholder,
+	    onInput: props.onInput,
+	    disabled: props.disabled,
+	    defaultValue: props.defaultValue
+	  };
+
+	  if (props.textarea) {
+	    return _react2.default.createElement('textarea', inputProps);
+	  } else {
+	    return _react2.default.createElement('input', inputProps);
+	  }
+	};
+
+	exports.default = Input;
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(24);
+
+	var _ErrorBox = __webpack_require__(17);
 
 	var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
@@ -835,50 +888,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 22 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(24);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _react2.default.createClass({
-	  displayName: 'LinkList',
-
-	  render: function render() {
-	    var className = this.props.className ? this.props.className + ' ' : '';
-	    className += 'link-list';
-	    return _react2.default.createElement(
-	      'ul',
-	      { className: className },
-	      this.props.children.map(function (child, i) {
-	        return _react2.default.createElement(
-	          'li',
-	          { key: 'link-list-' + i },
-	          child
-	        );
-	      })
-	    );
-	  }
-	});
-
-/***/ },
 /* 24 */
 /***/ function(module, exports) {
 
@@ -902,15 +911,25 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ListHeader = function ListHeader(props) {
-	  return _react2.default.createElement(
-	    'h2',
-	    { className: 'list-header' },
-	    props.children
-	  );
-	};
+	exports.default = _react2.default.createClass({
+	  displayName: 'LinkList',
 
-	exports.default = ListHeader;
+	  render: function render() {
+	    var className = this.props.className ? this.props.className + ' ' : '';
+	    className += 'link-list';
+	    return _react2.default.createElement(
+	      'ul',
+	      { className: className },
+	      this.props.children.map(function (child, i) {
+	        return _react2.default.createElement(
+	          'li',
+	          { key: 'link-list-' + i },
+	          child
+	        );
+	      })
+	    );
+	  }
+	});
 
 /***/ },
 /* 26 */
@@ -936,20 +955,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = function (props) {
-	  var className = 'panel';
-	  if (props.isHeading) {
-	    className += ' panel-heading';
-	  }
-	  if (props.className) {
-	    className += props.className;
-	  }
+	var ListHeader = function ListHeader(props) {
 	  return _react2.default.createElement(
-	    'div',
-	    { className: className },
+	    'h2',
+	    { className: 'list-header' },
 	    props.children
 	  );
 	};
+
+	exports.default = ListHeader;
 
 /***/ },
 /* 28 */
@@ -971,11 +985,50 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SearchInput = __webpack_require__(30);
+	__webpack_require__(30);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+	  var className = 'panel';
+	  if (props.isHeading) {
+	    className += ' panel-heading';
+	  }
+	  if (props.className) {
+	    className += props.className;
+	  }
+	  return _react2.default.createElement(
+	    'div',
+	    { className: className },
+	    props.children
+	  );
+	};
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SearchInput = __webpack_require__(32);
 
 	var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
-	__webpack_require__(33);
+	__webpack_require__(35);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1001,7 +1054,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1014,11 +1067,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(31);
+	var _reactDom = __webpack_require__(33);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	__webpack_require__(32);
+	__webpack_require__(34);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1050,19 +1103,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_31__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_33__;
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

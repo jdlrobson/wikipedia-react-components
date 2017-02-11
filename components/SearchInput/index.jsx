@@ -23,7 +23,7 @@ export default React.createClass({
     var props = this.props;
     return (
       <input className="search" type="search" placeholder={props.placeholder} ref="input"
-        name={props.name}
+        name={props.name} autoComplete="off"
         onClick={props.onClick} onInput={this.onDoSearch} defaultValue={props.defaultValue}
         onKeyUp={this.onDoSearch}/>
     )

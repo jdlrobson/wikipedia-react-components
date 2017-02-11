@@ -823,7 +823,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    placeholder: props.placeholder,
 	    onInput: props.onInput,
 	    disabled: props.disabled,
-	    autocomplete: props.autocomplete,
 	    defaultValue: props.defaultValue
 	  };
 
@@ -1047,7 +1046,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        method: 'GET',
 	        action: '/' + props.language_project + '/Special:Search' },
 	      _react2.default.createElement(_SearchInput2.default, { onClick: props.onClickSearch, onSearch: props.onSearch,
-	        autocomplete: false,
 	        name: 'search',
 	        placeholder: props.placeholder, defaultValue: props.defaultValue,
 	        focusOnRender: props.focusOnRender })
@@ -1098,7 +1096,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  render: function render() {
 	    var props = this.props;
 	    return _react2.default.createElement('input', { className: 'search', type: 'search', placeholder: props.placeholder, ref: 'input',
-	      name: props.name,
+	      name: props.name, autocomplete: 'off',
 	      onClick: props.onClick, onInput: this.onDoSearch, defaultValue: props.defaultValue,
 	      onKeyUp: this.onDoSearch });
 	  }

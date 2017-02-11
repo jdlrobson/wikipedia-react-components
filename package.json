@@ -8,6 +8,10 @@
       "react"
     ]
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/jdlrobson/wikipedia-react-components.git"
+  },
   "scripts": {
     "compile": "webpack --content-base dist/",
     "build": "npm run compile && npm run demo",

@@ -823,6 +823,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    placeholder: props.placeholder,
 	    onInput: props.onInput,
 	    disabled: props.disabled,
+	    autocomplete: props.autocomplete,
 	    defaultValue: props.defaultValue
 	  };
 
@@ -1046,6 +1047,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        method: 'GET',
 	        action: '/' + props.language_project + '/Special:Search' },
 	      _react2.default.createElement(_SearchInput2.default, { onClick: props.onClickSearch, onSearch: props.onSearch,
+	        autocomplete: false,
 	        name: 'search',
 	        placeholder: props.placeholder, defaultValue: props.defaultValue,
 	        focusOnRender: props.focusOnRender })

@@ -16,7 +16,6 @@ export default React.createClass({
         method="GET"
         action={'/' +props.language_project + '/Special:Search'}>
         <SearchInput onClick={props.onClickSearch} onSearch={props.onSearch}
-          autocomplete={false}
           name="search"
           placeholder={props.placeholder} defaultValue={props.defaultValue}
           focusOnRender={props.focusOnRender} />

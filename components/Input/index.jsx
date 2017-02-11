@@ -9,7 +9,6 @@ const Input = (props) => {
     placeholder: props.placeholder,
     onInput: props.onInput,
     disabled: props.disabled,
-    autocomplete: props.autocomplete,
     defaultValue: props.defaultValue
   };
 

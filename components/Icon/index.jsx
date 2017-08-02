@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './mediawiki-ui-icon.css'
 
-export default React.createClass({
+class Icon extends Component {
   componentWillMount() {
     this.setState( { jsEnabled: false } );
-  },
+  }
   componentDidMount() {
     this.setState( { jsEnabled: true } );
-  },
+  }
   render() {
     var props = this.props;
     var glyph = props.glyph;
@@ -37,4 +37,6 @@ export default React.createClass({
     return iconProps.href ? <a {...iconProps}>{props.label}</a> :
       <div {...iconProps}>{props.label}</div>;
   }
-});
+}
+
+export default Icon;

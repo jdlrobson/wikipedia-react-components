@@ -1,20 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './mediawiki-ui-checkbox.css'
 
-export default React.createClass({
+class Checkbox extends Component {
   componentWillMount() {
     this.setState( { jsEnabled: false } );
-  },
+  }
   componentDidMount() {
     this.setState( { jsEnabled: true } );
-  },
+  }
   update( ev ) {
     var el = ev.currentTarget;
     if ( this.props.onToggle ) {
       this.props.onToggle( el.getAttribute( 'name' ), el.checked );
     }
-  },
+  }
   render() {
     var props = this.props;
     return (
@@ -30,4 +30,6 @@ export default React.createClass({
       </span>
     );
   }
-})
+}
+
+export default Checkbox;

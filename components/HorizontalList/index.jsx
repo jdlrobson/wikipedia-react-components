@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './styles.less'
 
-export default React.createClass({
-   render: function() {
+class HorizontalList extends Component {
+   render() {
      var cl = this.props.className ? this.props.className + ' hlist' : 'hlist';
      return (
        <ul className={ cl + ( this.props.isSeparated ? ' separated' : '')} id={this.props.id}>
@@ -13,4 +13,6 @@ export default React.createClass({
        </ul>
      )
    }
- });
+}
+
+export default HorizontalList;

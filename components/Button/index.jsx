@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './mediawiki-ui-button.css'
 
-export default React.createClass({
+class Button extends Component {
   componentWillMount() {
     this.setState( { jsEnabled: false } );
-  },
+  }
   componentDidMount() {
     this.setState( { jsEnabled: true } );
-  },
+  }
   render() {
     var props = this.props;
     var disabled = false;
@@ -30,4 +30,6 @@ export default React.createClass({
     return btnProps.href ? <a {...btnProps}>{props.label}</a> :
       <button {...btnProps}>{props.label}</button>
   }
-})
+}
+
+export default Button

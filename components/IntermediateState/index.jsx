@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './styles.less'
 
 import ErrorBox from './../ErrorBox'
 
-export default React.createClass({
+class IntermediateState extends Component {
   componentWillMount() {
     this.setState( { jsEnabled: false } );
-  },
+  }
   componentDidMount() {
     this.setState( { jsEnabled: true } );
-  },
+  }
   render() {
     var props = this.props;
     var msg = props.msg || 'Loading';
@@ -20,4 +20,6 @@ export default React.createClass({
       </div>
     )
   }
-});
+}
+
+export default IntermediateState;

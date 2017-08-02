@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './styles.less'
 
-export default React.createClass({
-  render: function () {
+class CardList extends Component {
+  render() {
     var props = this.props;
     var isUnordered = !props.ordered;
     var cards = props.cards;
@@ -17,4 +17,6 @@ export default React.createClass({
         <div className={className}>{props.children}</div>
       ) : <div className="card-list-empty">{props.emptyMessage}</div>;
   }
-} );
+}
+
+export default CardList;

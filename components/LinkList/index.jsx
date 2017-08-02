@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './styles.less'
 
-export default React.createClass({
-   render: function() {
+class LinkList extends Component {
+   render() {
      var className = this.props.className ? this.props.className + ' ' : '';
      className += 'link-list';
      return (
@@ -16,4 +16,6 @@ export default React.createClass({
        </ul>
      )
    }
- });
+}
+
+export default LinkList;

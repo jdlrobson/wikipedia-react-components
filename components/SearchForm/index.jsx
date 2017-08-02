@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import SearchInput from './../SearchInput'
 
 import './styles.less'
 
-export default React.createClass({
+class SearchForm extends Component {
   onDoSearch( ev ){
     ev.preventDefault();
     this.props.onSearchSubmit( ev.currentTarget.querySelector( 'input' ).value );
-  },
+  }
   render() {
     var props = this.props;
     return (
@@ -22,4 +22,6 @@ export default React.createClass({
       </form>
     )
   }
-});
+}
+
+export default SearchForm;

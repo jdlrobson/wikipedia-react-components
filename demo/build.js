@@ -72,11 +72,13 @@ function paragraph( text ) {
   container.appendChild( p );
 }
 
+var exampleNum = 0;
 function renderExample( ComponentClass, data ) {
-  var ex = document.createElement( 'div' );
+  var ex = document.createElement( 'div', { key: 'example-' + exampleNum } );
   container.appendChild( ex );
   // Button
   ReactDOM.render( React.createElement( ComponentClass, data ), ex );
+  exampleNum++;
 }
 
 newLine( 'Buttons' );
@@ -143,14 +145,14 @@ newLine( 'Panel containers' );
 renderExample( Panel, {
   isHeading: true,
   children: [
-    React.createElement( 'span', {},
+    React.createElement( 'span', { key: 'panel-heading' },
       'Panel.isHeading' )
   ]
 });
 
 renderExample( Panel, {
   children: [
-    React.createElement( 'div', {},
+    React.createElement( 'div', { key: 'panel-normal' },
       'Normal panel' )
   ]
 });
@@ -180,9 +182,11 @@ newLine( 'Lists' );
 
 renderExample( ListHeader, {
   children: [
-    React.createElement( 'div', {}, 'ListHeader' )
+    React.createElement( 'div', { key: 'listheader-example' }, 'ListHeader' )
   ]
 });
+
+newLine( 'LinkList', '3' );
 
 renderExample( LinkList, {
   children: [
@@ -191,6 +195,8 @@ renderExample( LinkList, {
     React.createElement( 'a', { href: '#' }, 'LinkList - Link 3' )
   ]
 });
+
+newLine( 'HorizontalList', '3' );
 
 renderExample( HorizontalList, {
   isSeparated: true,
@@ -201,11 +207,13 @@ renderExample( HorizontalList, {
   ]
 });
 
+newLine( 'CardList', '3' );
+
 paragraph( 'A CardList can contain children other than Card such as IntermediateState...' );
 
 renderExample( CardList, {
   children: [
-      <IntermediateState msg="Loading cards" />
+      <IntermediateState msg="Loading cards" key="card-list-pending" />
   ]
 });
 
@@ -213,7 +221,7 @@ paragraph( '... or an ErrorBox' );
 
 renderExample( CardList, {
   children: [
-      <ErrorBox msg="An error occurred while loading your cards." />
+      <ErrorBox msg="An error occurred while loading your cards." key="card-list-error" />
   ]
 });
 
@@ -222,9 +230,9 @@ paragraph( 'Use them to render lists of Cards (responsive)' );
 renderExample( CardList, {
   ordered: false,
   children: [
-    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 1" />,
-    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 2" />,
-    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 3" />
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 1" key="card-list-item-1" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 2" key="card-list-item-2" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 3" key="card-list-item-3" />
   ]
 });
 
@@ -233,9 +241,9 @@ paragraph( 'You can also force them to be ordered to always be in a single colum
 renderExample( CardList, {
   ordered: true,
   children: [
-    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 1" />,
-    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 2" />,
-    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 3" />
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 1" key="card-list-ordered-item-1" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 2" key="card-list-ordered-item-2" />,
+    <Card {...EXAMPLE_CARD_THUMBNAIL} title="Card 3" key="card-list-ordered-item-3" />
   ]
 });
 
@@ -244,11 +252,11 @@ paragraph( 'Or to render CardDiffs or any other Card type. You can also pass a L
 renderExample( CardList, {
   ordered: true,
   children: [
-    <ListHeader>Header</ListHeader>,
-    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 1" />,
-    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 2" />,
-    <ListHeader>Another header</ListHeader>,
-    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 3" />
+    <ListHeader key="card-list-header-1">Header</ListHeader>,
+    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 1" key="card-diff-title-1" />,
+    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 2" key="card-diff-title-2" />,
+    <ListHeader key="card-list-header-2">Another header</ListHeader>,
+    <CardDiff {...EXAMPLE_CARD_DIFF} title="Title 3" key="card-diff-title-3" />
   ]
 });
 
@@ -264,7 +272,7 @@ renderExample( IntermediateState, {
 
 renderExample( TruncatedText, {
   children: [
-    React.createElement( 'span', {},
+    React.createElement( 'span', { key: 'truncated-span' },
       'TruncatedText does its magic and very very long text gets truncated' )
   ]
 });

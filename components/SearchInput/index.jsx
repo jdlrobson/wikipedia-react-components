@@ -5,8 +5,11 @@ import './styles.less'
 
 class SearchInput extends Component {
   onDoSearch( ev ){
-    ev.preventDefault();
-    this.props.onSearch( ev.currentTarget.value );
+    var props = this.props;
+    if ( props.onSearch ) {
+      ev.preventDefault();
+      props.onSearch( ev.currentTarget.value );
+    }
   }
   componentDidMount(){
     var input = ReactDOM.findDOMNode( this );
@@ -24,8 +27,8 @@ class SearchInput extends Component {
     return (
       <input className="search" type="search" placeholder={props.placeholder} ref="input"
         name={props.name} autoComplete="off"
-        onClick={props.onClick} onInput={this.onDoSearch} defaultValue={props.defaultValue}
-        onKeyUp={this.onDoSearch}/>
+        onClick={props.onClick} onInput={this.onDoSearch.bind(this)} defaultValue={props.defaultValue}
+        onKeyUp={this.onDoSearch.bind(this)}/>
     )
   }
 }

@@ -1288,8 +1288,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _createClass(SearchInput, [{
 	    key: 'onDoSearch',
 	    value: function onDoSearch(ev) {
-	      ev.preventDefault();
-	      this.props.onSearch(ev.currentTarget.value);
+	      var props = this.props;
+	      if (props.onSearch) {
+	        ev.preventDefault();
+	        props.onSearch(ev.currentTarget.value);
+	      }
 	    }
 	  }, {
 	    key: 'componentDidMount',
@@ -1310,8 +1313,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var props = this.props;
 	      return _react2.default.createElement('input', { className: 'search', type: 'search', placeholder: props.placeholder, ref: 'input',
 	        name: props.name, autoComplete: 'off',
-	        onClick: props.onClick, onInput: this.onDoSearch, defaultValue: props.defaultValue,
-	        onKeyUp: this.onDoSearch });
+	        onClick: props.onClick, onInput: this.onDoSearch.bind(this), defaultValue: props.defaultValue,
+	        onKeyUp: this.onDoSearch.bind(this) });
 	    }
 	  }]);
 

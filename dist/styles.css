@@ -468,7 +468,6 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.ico
 .card-list-empty {
   color: #333;
   text-align: center;
-  font-size: .9em;
 }
 @media (min-width: 720px) {
   .card-list {
@@ -723,16 +722,9 @@ input.mw-ui-input-large {
   color: #666666;
 }
 /**
- * WikimediaUI base v0.6.1
+ * WikimediaUI Base v0.10.0
  * Wikimedia Foundation user interface base variables
  */
-/* Colors */
-/* Positioning */
-/* Box Model properties */
-/* Max Widths */
-/* Typography incl. print properties */
-/* Other Properties */
-/* Animation & Transition */
 .list-header {
   font-family: 'Helvetica Neue', 'Helvetica', 'Nimbus Sans L', 'Arial', 'Liberation Sans', sans-serif;
   font-weight: bold;

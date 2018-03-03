@@ -16,11 +16,17 @@
     "compile": "webpack dist/",
     "build": "npm run compile && npm run demo",
     "demo": "webpack dist/ --config webpack.config.demo.js",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run compile",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "main": "dist/index.js",
   "style": "dist/styles.css",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.14",
+    "@storybook/addon-links": "^3.3.14",
+    "@storybook/addons": "^3.3.14",
+    "@storybook/react": "^3.3.14",
     "babel-core": "^6.16.0",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.9.0",

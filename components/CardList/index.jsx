@@ -13,7 +13,7 @@ class CardList extends Component {
     if ( props.className ) {
       className += ' ' + props.className;
     }
-    return props.children.length ? (
+    return props.children && props.children.length ? (
         <div className={className}>{props.children}</div>
       ) : <div className="card-list-empty">{props.emptyMessage}</div>;
   }

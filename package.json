@@ -13,9 +13,9 @@
     "url": "https://github.com/jdlrobson/wikipedia-react-components.git"
   },
   "scripts": {
-    "compile": "webpack dist/",
+    "compile": "webpack --output-path dist/",
     "build": "npm run compile && npm run demo",
-    "demo": "webpack dist/ --config webpack.config.demo.js",
+    "demo": "webpack --output-path dist/ --config webpack.config.demo.js",
     "prepublish": "npm run compile",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

@@ -1,0 +1,21 @@
+{
+  "extends": "wikimedia",
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "module": false
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+     },
+    "sourceType": "module",
+    "ecmaVersion": "5"
+  },
+  "rules": {
+    "react/jsx-uses-vars": 1,
+    "react/jsx-uses-react": 1
+  }
+}

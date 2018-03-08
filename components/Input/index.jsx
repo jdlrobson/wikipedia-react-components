@@ -1,22 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-import './mediawiki-ui-input.css'
+import './mediawiki-ui-input.css';
 
-const Input = (props) => {
-  var suffix = props.className ? ' ' + props.className : '';
-  var inputProps = {
-    className: 'mw-ui-input' + suffix,
-    placeholder: props.placeholder,
-    onInput: props.onInput,
-    disabled: props.disabled,
-    defaultValue: props.defaultValue
-  };
+const Input = ( props ) => {
+	var inputProps,
+		suffix = props.className ? ' ' + props.className : '';
 
-  if ( props.textarea ) {
-    return <textarea {...inputProps} />;
-  } else {
-    return <input {...inputProps} />
-  }
-}
+	inputProps = {
+		className: 'mw-ui-input' + suffix,
+		placeholder: props.placeholder,
+		onInput: props.onInput,
+		disabled: props.disabled,
+		defaultValue: props.defaultValue
+	};
 
-export default Input
+	if ( props.textarea ) {
+		return <textarea {...inputProps} />;
+	} else {
+		return <input {...inputProps} />;
+	}
+};
+
+export default Input;

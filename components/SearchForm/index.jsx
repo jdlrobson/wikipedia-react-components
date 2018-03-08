@@ -11,10 +11,11 @@ class SearchForm extends Component {
   }
   render() {
     var props = this.props;
+    var action = props.action || '/' + props.language_project + '/Special:Search';
     return (
       <form className="search-form" onSubmit={this.onDoSearch}
         method="GET"
-        action={'/' +props.language_project + '/Special:Search'}>
+        action={action}>
         <SearchInput onClick={props.onClickSearch} onSearch={props.onSearch}
           name="search"
           placeholder={props.placeholder} defaultValue={props.defaultValue}

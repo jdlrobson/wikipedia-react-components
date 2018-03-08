@@ -22,7 +22,7 @@ class Checkbox extends Component {
         <div className="mw-ui-checkbox">
           <input type="checkbox" name={props.name}
             defaultChecked={props.checked}
-            onChange={this.update}/>
+            onChange={this.update.bind(this)}/>
           <label htmlFor={props.name}>
             {props.label}
           </label>

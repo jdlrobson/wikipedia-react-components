@@ -219,7 +219,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var TruncatedText = function TruncatedText(props) {
   return _react2.default.createElement(
     'span',
-    { className: 'truncated-text' },
+    { className: 'truncated-text', style: props.style },
     props.children
   );
 };
@@ -680,18 +680,18 @@ var CardDiff = function (_Component) {
         { className: 'edit-summary' },
         props.comment || 'No edit summary'
       )];
+      var userHref = props.userHref || '/' + props.language_project + '/User:' + encodeURIComponent(username);
       if (username) {
-        // FIXME: Support anonymous users too
         extracts.unshift(_react2.default.createElement(_Icon2.default, { glyph: glyph, type: 'before', label: username, className: 'mw-mf-user',
-          href: '/' + props.language_project + '/User:' + encodeURIComponent(username) }));
+          href: userHref }));
       }
-      var date = new Date(props.timestamp);
-      var bytes = props.newlen ? props.newlen - props.oldlen : props.sizediff;
+      var date = props.timestamp ? new Date(props.timestamp) : null;
+      var bytes = props.newlen ? newlen - props.oldlen : props.sizediff;
       var bytesDeltaClass = bytes < 0 ? 'bytes-removed' : 'bytes-added';
       var metaInfo = _react2.default.createElement(
         'div',
         { className: 'meta' },
-        _react2.default.createElement(
+        date && _react2.default.createElement(
           'p',
           { className: 'timestamp' },
           date.getUTCHours(),
@@ -939,7 +939,7 @@ var Checkbox = function (_Component) {
           { className: 'mw-ui-checkbox' },
           _react2.default.createElement('input', { type: 'checkbox', name: props.name,
             defaultChecked: props.checked,
-            onChange: this.update }),
+            onChange: this.update.bind(this) }),
           _react2.default.createElement(
             'label',
             { htmlFor: props.name },
@@ -1254,7 +1254,7 @@ exports.default = ListHeader;
 /* 29 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \n\n@import '../node_modules/wikimedia-ui-base/wikimedia-ui-base.less';\n^\nCan't resolve '../node_modules/wikimedia-ui-base/wikimedia-ui-base.less' in '/Users/jrobson/git/wikipedia-react-components/components'\n      in /Users/jrobson/git/wikipedia-react-components/components/globals.less (line 1, column 0)\n    at runLoaders (/Users/jrobson/git/wikipedia-react-components/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/jrobson/git/wikipedia-react-components/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/jrobson/git/wikipedia-react-components/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/jrobson/git/wikipedia-react-components/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:160:7)");
 
 /***/ }),
 /* 30 */
@@ -1346,11 +1346,12 @@ var SearchForm = function (_Component) {
     key: 'render',
     value: function render() {
       var props = this.props;
+      var action = props.action || '/' + props.language_project + '/Special:Search';
       return _react2.default.createElement(
         'form',
         { className: 'search-form', onSubmit: this.onDoSearch,
           method: 'GET',
-          action: '/' + props.language_project + '/Special:Search' },
+          action: action },
         _react2.default.createElement(_SearchInput2.default, { onClick: props.onClickSearch, onSearch: props.onSearch,
           name: 'search',
           placeholder: props.placeholder, defaultValue: props.defaultValue,

@@ -13,16 +13,18 @@ class CardDiff extends Component {
     var extracts = [
       <span className="edit-summary">{props.comment || 'No edit summary'}</span>
     ];
+    var userHref = props.userHref || '/' + props.language_project + '/User:' + encodeURIComponent( username );
     if ( username ) {
-      // FIXME: Support anonymous users too
       extracts.unshift( <Icon glyph={glyph} type="before" label={username} className="mw-mf-user"
-        href={'/' + props.language_project + '/User:' + encodeURIComponent( username )} /> );
+        href={userHref} /> );
     }
-    var date = new Date( props.timestamp );
-    var bytes = props.newlen ? props.newlen - props.oldlen : props.sizediff;
+    var date = props.timestamp ? new Date( props.timestamp ) : null;
+    var bytes = props.newlen ? newlen - props.oldlen : props.sizediff;
     var bytesDeltaClass = bytes < 0 ? 'bytes-removed' : 'bytes-added';
     var metaInfo = <div className="meta">
-      <p className="timestamp">{date.getUTCHours()}:{date.getUTCMinutes()}</p>
+      { date &&
+        <p className="timestamp">{date.getUTCHours()}:{date.getUTCMinutes()}</p>
+      }
       <p className={bytesDeltaClass}>{bytes}</p>
     </div>;
     if ( props.minor ) {

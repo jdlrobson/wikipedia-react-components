@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import Card from './../Card/index.jsx'
+import CardDiff from './../CardDiff/index.jsx'
 import ListHeader from './../ListHeader'
 import CardList from './index.jsx'
 import IntermediateState from './../IntermediateState/index.jsx'
@@ -50,7 +51,11 @@ storiesOf('CardList', module)
         <ListHeader>Header</ListHeader>
         <IntermediateState msg="Loading cards" key="card-list-pending" />
         <ListHeader>While you wait</ListHeader>
-        <p>This happens.</p>
+        <CardDiff
+          timestamp="2018-02-14T18:39:58Z" title="Page"
+          anon={true}
+          user="0.0.0.0"
+          userHref="https://0.0.0.0" />
       </CardList>
     )
   });

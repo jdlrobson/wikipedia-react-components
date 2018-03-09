@@ -400,7 +400,6 @@ var SearchInput = function (_Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			var input = this.textInput;
-			console.log('i', input);
 			if (this.props.focusOnRender) {
 				input.focus();
 				// show keyboard

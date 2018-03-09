@@ -36,6 +36,23 @@ input.search {
   padding: 20px 16px;
   line-height: inherit;
 }
+/**
+ * WikimediaUI Base v0.10.0
+ * Wikimedia Foundation user interface base variables
+ */
+.list-header {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Nimbus Sans L', 'Arial', 'Liberation Sans', sans-serif;
+  font-weight: bold;
+  font-size: 0.85em;
+  padding: 0.5em 16px 0.4em 16px;
+  background-color: #eeeeee;
+  color: #777777;
+}
+@media (min-width: 720px) {
+  .list-header {
+    padding: 0.5em 3.35em 0.4em 16px;
+  }
+}
 .link-list li {
   background-color: #fff;
   padding: 0;

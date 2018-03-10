@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import './styles.less';
 
@@ -25,7 +24,7 @@ class SearchInput extends Component {
 	render() {
 		var props = this.props;
 		return (
-			<input className="search" type="search" placeholder={props.placeholder} ref={(input) => { this.textInput = input }}
+			<input className="search" type="search" placeholder={props.placeholder} ref={( input ) => { this.textInput = input; }}
 				name={props.name} autoComplete="off"
 				onClick={props.onClick} onInput={this.onDoSearch.bind( this )} defaultValue={props.defaultValue}
 				onKeyUp={this.onDoSearch.bind( this )}/>

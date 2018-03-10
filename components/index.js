@@ -15,12 +15,16 @@ import Panel from './Panel';
 import SearchForm from './SearchForm';
 import SearchInput from './SearchInput';
 import TruncatedText from './TruncatedText';
+import Header from './Header';
+import Content from './Content';
 
 export {
 	Button, Icon, Input, Checkbox,
 	Card,
 	CardList,
 	CardWithLocation, CardDiff,
+	Content,
+	Header,
 	ErrorBox, IntermediateState,
 	ListHeader, Panel,
 	SearchInput, SearchForm,

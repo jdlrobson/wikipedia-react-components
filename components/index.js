@@ -17,6 +17,7 @@ import SearchInput from './SearchInput';
 import TruncatedText from './TruncatedText';
 import Header from './Header';
 import Content from './Content';
+import Overlay from './Overlay';
 
 export {
 	Button, Icon, Input, Checkbox,
@@ -25,6 +26,7 @@ export {
 	CardWithLocation, CardDiff,
 	Content,
 	Header,
+	Overlay,
 	ErrorBox, IntermediateState,
 	ListHeader, Panel,
 	SearchInput, SearchForm,

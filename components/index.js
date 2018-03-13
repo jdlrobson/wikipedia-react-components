@@ -18,6 +18,7 @@ import TruncatedText from './TruncatedText';
 import Header from './Header';
 import Content from './Content';
 import Overlay from './Overlay';
+import Toast from './Toast';
 
 export {
 	Button, Icon, Input, Checkbox,
@@ -27,6 +28,7 @@ export {
 	Content,
 	Header,
 	Overlay,
+	Toast,
 	ErrorBox, IntermediateState,
 	ListHeader, Panel,
 	SearchInput, SearchForm,

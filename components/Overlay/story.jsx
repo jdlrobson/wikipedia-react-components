@@ -7,6 +7,8 @@ import Icon from './../Icon';
 import Header from './../Header';
 import ipsum from './../Header/ipsum';
 
+import './stories.less';
+
 storiesOf( 'Overlay', module )
 	.add( 'drawer', () => {
 		return (
@@ -27,6 +29,18 @@ storiesOf( 'Overlay', module )
 		return (
 			<Overlay onExit={action( 'onExit' )}>
 				<Header><h2>Look a header!</h2></Header>
+				<strong>An overlay which has a Header as a first child will take up the full screen.</strong>
+				<p>{ipsum()}</p>
+			</Overlay>
+		);
+	} )
+	.add( 'with header and primaryIcon', () => {
+		var backIcon = <Icon glyph="back" onClick={action( 'onClick' )} />;
+		return (
+			<Overlay>
+				<Header primaryIcon={backIcon}>
+					<h2>Look a header!</h2>
+				</Header>
 				<strong>An overlay which has a Header as a first child will take up the full screen.</strong>
 				<p>{ipsum()}</p>
 			</Overlay>

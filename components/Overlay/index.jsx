@@ -47,9 +47,14 @@ class Overlay extends Component {
 			if ( firstChild.props.fixed ) {
 				overlayClass += ' overlay-with-fixed-header';
 			}
-			header = React.cloneElement( firstChild, {
-				primaryIcon: icon
-			} );
+			// Primary icon is mandatory. Assume action is close, if none given.
+			if ( !firstChild.props.primaryIcon ) {
+				header = React.cloneElement( firstChild, {
+					primaryIcon: icon
+				} );
+			} else {
+				header = firstChild;
+			}
 		} else if ( this.props.isLightBox ) {
 			header = (
 				<div className="lightbox-header">

@@ -2,6 +2,34 @@
  * WikimediaUI Base v0.10.0
  * Wikimedia Foundation user interface base variables
  */
+.mw-notification {
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+}
+.mw-notification .content {
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -1px 8px 0 rgba(0, 0, 0, 0.35);
+  word-wrap: break-word;
+  z-index: 2;
+  font-size: 0.9em;
+  padding: 0.9em 1em;
+  background-color: #373737;
+  color: #fff;
+  margin: 0 10% 20px;
+  width: 80%;
+  text-align: center;
+  border-radius: 3px;
+}
+/**
+ * WikimediaUI Base v0.10.0
+ * Wikimedia Foundation user interface base variables
+ */
 .mw-ui-icon-close:before {
   background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3Csvg%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M4.983%201.606l17.465%2017.466-2.97%202.97L2.014%204.575z%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M19.407%201.605l2.97%202.97L4.914%2022.042l-2.97-2.97z%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A);
 }
@@ -26,7 +54,7 @@
   visibility: visible;
 }
 .overlay.lightbox {
-  background: #000;
+  background: #373737;
   padding-top: 0;
   color: #fff;
 }

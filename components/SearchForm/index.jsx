@@ -14,7 +14,7 @@ class SearchForm extends Component {
 			action = props.action || '/' + props.language_project + '/Special:Search';
 
 		return (
-			<form className="search-form" onSubmit={this.onDoSearch}
+			<form className="search-form" onSubmit={this.onDoSearch.bind(this)}
 				method="GET"
 				action={action}>
 				<SearchInput onClick={props.onClickSearch} onSearch={props.onSearch}

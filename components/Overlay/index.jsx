@@ -5,6 +5,7 @@ import './styles.less';
 
 import Icon from './../Icon';
 import Header from './../Header';
+import Content from './../Content';
 
 // Main component
 
@@ -69,9 +70,9 @@ class Overlay extends Component {
 		return (
 			<div className={baseClass + overlayClass + visibleClass}>
 				{header}
-				<div className="overlay-content">
+				<Content className="overlay-content">
 					{children}
-				</div>
+				</Content>
 			</div>
 		);
 	}

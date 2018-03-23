@@ -96,7 +96,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TruncatedText = __webpack_require__(3);
+var _TruncatedText = __webpack_require__(4);
 
 var _TruncatedText2 = _interopRequireDefault(_TruncatedText);
 
@@ -304,6 +304,35 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(38);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Content = function Content(props) {
+	return _react2.default.createElement(
+		'div',
+		{ className: 'content-container ' + (props.className ? props.className : '') },
+		props.children
+	);
+};
+
+exports.default = Content;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
 __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -319,7 +348,7 @@ var TruncatedText = function TruncatedText(props) {
 exports.default = TruncatedText;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -348,7 +377,7 @@ var ErrorBox = function ErrorBox(props) {
 exports.default = ErrorBox;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -426,7 +455,7 @@ var SearchInput = function (_Component) {
 exports.default = SearchInput;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -442,7 +471,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Content = __webpack_require__(7);
+var _Content = __webpack_require__(3);
 
 var _Content2 = _interopRequireDefault(_Content);
 
@@ -519,35 +548,6 @@ Header.defaultProps = {
 exports.default = Header;
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(38);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Content = function Content(props) {
-	return _react2.default.createElement(
-		'div',
-		{ className: 'content-container ' + (props.className ? props.className : '') },
-		props.children
-	);
-};
-
-exports.default = Content;
-
-/***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -570,9 +570,13 @@ var _Icon = __webpack_require__(2);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _Header = __webpack_require__(6);
+var _Header = __webpack_require__(7);
 
 var _Header2 = _interopRequireDefault(_Header);
+
+var _Content = __webpack_require__(3);
+
+var _Content2 = _interopRequireDefault(_Content);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -638,9 +642,14 @@ var Overlay = function (_Component) {
 				if (firstChild.props.fixed) {
 					overlayClass += ' overlay-with-fixed-header';
 				}
-				header = _react2.default.cloneElement(firstChild, {
-					primaryIcon: icon
-				});
+				// Primary icon is mandatory. Assume action is close, if none given.
+				if (!firstChild.props.primaryIcon) {
+					header = _react2.default.cloneElement(firstChild, {
+						primaryIcon: icon
+					});
+				} else {
+					header = firstChild;
+				}
 			} else if (this.props.isLightBox) {
 				header = _react2.default.createElement(
 					'div',
@@ -658,7 +667,7 @@ var Overlay = function (_Component) {
 				{ className: baseClass + overlayClass + visibleClass },
 				header,
 				_react2.default.createElement(
-					'div',
+					_Content2.default,
 					{ className: 'overlay-content' },
 					children
 				)
@@ -711,7 +720,7 @@ var _Checkbox = __webpack_require__(20);
 
 var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-var _ErrorBox = __webpack_require__(4);
+var _ErrorBox = __webpack_require__(5);
 
 var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
@@ -747,19 +756,19 @@ var _SearchForm = __webpack_require__(35);
 
 var _SearchForm2 = _interopRequireDefault(_SearchForm);
 
-var _SearchInput = __webpack_require__(5);
+var _SearchInput = __webpack_require__(6);
 
 var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
-var _TruncatedText = __webpack_require__(3);
+var _TruncatedText = __webpack_require__(4);
 
 var _TruncatedText2 = _interopRequireDefault(_TruncatedText);
 
-var _Header = __webpack_require__(6);
+var _Header = __webpack_require__(7);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Content = __webpack_require__(7);
+var _Content = __webpack_require__(3);
 
 var _Content2 = _interopRequireDefault(_Content);
 
@@ -1380,7 +1389,7 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(28);
 
-var _ErrorBox = __webpack_require__(4);
+var _ErrorBox = __webpack_require__(5);
 
 var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
@@ -1599,7 +1608,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SearchInput = __webpack_require__(5);
+var _SearchInput = __webpack_require__(6);
 
 var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
@@ -1636,10 +1645,11 @@ var SearchForm = function (_Component) {
 
 			return _react2.default.createElement(
 				'form',
-				{ className: 'search-form', onSubmit: this.onDoSearch,
+				{ className: 'search-form', onSubmit: this.onDoSearch.bind(this),
 					method: 'GET',
 					action: action },
 				_react2.default.createElement(_SearchInput2.default, { onClick: props.onClickSearch, onSearch: props.onSearch,
+					key: 'search-form-input',
 					name: 'search',
 					placeholder: props.placeholder, defaultValue: props.defaultValue,
 					focusOnRender: props.focusOnRender })
@@ -1690,7 +1700,7 @@ exports.default = SearchForm;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = __webpack_require__(0);
@@ -1706,15 +1716,15 @@ __webpack_require__(42);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Toast = function Toast(props) {
-  return _react2.default.createElement(
-    _Overlay2.default,
-    { className: 'mw-notification' },
-    _react2.default.createElement(
-      'div',
-      { className: 'content' },
-      props.children
-    )
-  );
+	return _react2.default.createElement(
+		_Overlay2.default,
+		{ className: 'mw-notification' },
+		_react2.default.createElement(
+			'div',
+			{ className: 'content' },
+			props.children
+		)
+	);
 };
 
 exports.default = Toast;

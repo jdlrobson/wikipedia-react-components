@@ -18,6 +18,7 @@ class SearchForm extends Component {
 				method="GET"
 				action={action}>
 				<SearchInput onClick={props.onClickSearch} onSearch={props.onSearch}
+					key="search-form-input"
 					name="search"
 					placeholder={props.placeholder} defaultValue={props.defaultValue}
 					focusOnRender={props.focusOnRender} />

@@ -1,7 +1,7 @@
 {
   "name": "wikipedia-react-components",
   "description": "wikipedia style react components",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "babel": {
     "presets": [
       "es2015",

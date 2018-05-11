@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -96,7 +96,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TruncatedText = __webpack_require__(4);
+var _TruncatedText = __webpack_require__(5);
 
 var _TruncatedText2 = _interopRequireDefault(_TruncatedText);
 
@@ -328,6 +328,131 @@ exports.default = Content;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.Toast = exports.Overlay = exports.Header = exports.Content = exports.CardDiff = exports.CardWithLocation = exports.CardList = exports.CtaDrawer = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
+
+var _Button = __webpack_require__(10);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _Card = __webpack_require__(1);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _CardDiff = __webpack_require__(14);
+
+var _CardDiff2 = _interopRequireDefault(_CardDiff);
+
+var _CardList = __webpack_require__(17);
+
+var _CardList2 = _interopRequireDefault(_CardList);
+
+var _CardWithLocation = __webpack_require__(19);
+
+var _CardWithLocation2 = _interopRequireDefault(_CardWithLocation);
+
+var _Checkbox = __webpack_require__(20);
+
+var _Checkbox2 = _interopRequireDefault(_Checkbox);
+
+var _ErrorBox = __webpack_require__(6);
+
+var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
+
+var _HorizontalList = __webpack_require__(23);
+
+var _HorizontalList2 = _interopRequireDefault(_HorizontalList);
+
+var _Icon = __webpack_require__(2);
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+var _Input = __webpack_require__(25);
+
+var _Input2 = _interopRequireDefault(_Input);
+
+var _IntermediateState = __webpack_require__(27);
+
+var _IntermediateState2 = _interopRequireDefault(_IntermediateState);
+
+var _LinkList = __webpack_require__(29);
+
+var _LinkList2 = _interopRequireDefault(_LinkList);
+
+var _ListHeader = __webpack_require__(31);
+
+var _ListHeader2 = _interopRequireDefault(_ListHeader);
+
+var _Panel = __webpack_require__(33);
+
+var _Panel2 = _interopRequireDefault(_Panel);
+
+var _SearchForm = __webpack_require__(35);
+
+var _SearchForm2 = _interopRequireDefault(_SearchForm);
+
+var _SearchInput = __webpack_require__(7);
+
+var _SearchInput2 = _interopRequireDefault(_SearchInput);
+
+var _TruncatedText = __webpack_require__(5);
+
+var _TruncatedText2 = _interopRequireDefault(_TruncatedText);
+
+var _Header = __webpack_require__(8);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Content = __webpack_require__(3);
+
+var _Content2 = _interopRequireDefault(_Content);
+
+var _Overlay = __webpack_require__(9);
+
+var _Overlay2 = _interopRequireDefault(_Overlay);
+
+var _Toast = __webpack_require__(41);
+
+var _Toast2 = _interopRequireDefault(_Toast);
+
+var _CtaDrawer = __webpack_require__(43);
+
+var _CtaDrawer2 = _interopRequireDefault(_CtaDrawer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Button = _Button2.default;
+exports.Icon = _Icon2.default;
+exports.Input = _Input2.default;
+exports.Checkbox = _Checkbox2.default;
+exports.Card = _Card2.default;
+exports.CtaDrawer = _CtaDrawer2.default;
+exports.CardList = _CardList2.default;
+exports.CardWithLocation = _CardWithLocation2.default;
+exports.CardDiff = _CardDiff2.default;
+exports.Content = _Content2.default;
+exports.Header = _Header2.default;
+exports.Overlay = _Overlay2.default;
+exports.Toast = _Toast2.default;
+exports.ErrorBox = _ErrorBox2.default;
+exports.IntermediateState = _IntermediateState2.default;
+exports.ListHeader = _ListHeader2.default;
+exports.Panel = _Panel2.default;
+exports.SearchInput = _SearchInput2.default;
+exports.SearchForm = _SearchForm2.default;
+exports.LinkList = _LinkList2.default;
+exports.HorizontalList = _HorizontalList2.default;
+exports.TruncatedText = _TruncatedText2.default;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
 var _react = __webpack_require__(0);
 
@@ -348,7 +473,7 @@ var TruncatedText = function TruncatedText(props) {
 exports.default = TruncatedText;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -377,7 +502,7 @@ var ErrorBox = function ErrorBox(props) {
 exports.default = ErrorBox;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -455,7 +580,7 @@ var SearchInput = function (_Component) {
 exports.default = SearchInput;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -548,7 +673,7 @@ Header.defaultProps = {
 exports.default = Header;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -570,7 +695,7 @@ var _Icon = __webpack_require__(2);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _Header = __webpack_require__(7);
+var _Header = __webpack_require__(8);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -683,126 +808,6 @@ Overlay.defaultProps = {
 };
 
 exports.default = Overlay;
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.Toast = exports.Overlay = exports.Header = exports.Content = exports.CardDiff = exports.CardWithLocation = exports.CardList = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
-
-var _Button = __webpack_require__(10);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Card = __webpack_require__(1);
-
-var _Card2 = _interopRequireDefault(_Card);
-
-var _CardDiff = __webpack_require__(14);
-
-var _CardDiff2 = _interopRequireDefault(_CardDiff);
-
-var _CardList = __webpack_require__(17);
-
-var _CardList2 = _interopRequireDefault(_CardList);
-
-var _CardWithLocation = __webpack_require__(19);
-
-var _CardWithLocation2 = _interopRequireDefault(_CardWithLocation);
-
-var _Checkbox = __webpack_require__(20);
-
-var _Checkbox2 = _interopRequireDefault(_Checkbox);
-
-var _ErrorBox = __webpack_require__(5);
-
-var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
-
-var _HorizontalList = __webpack_require__(23);
-
-var _HorizontalList2 = _interopRequireDefault(_HorizontalList);
-
-var _Icon = __webpack_require__(2);
-
-var _Icon2 = _interopRequireDefault(_Icon);
-
-var _Input = __webpack_require__(25);
-
-var _Input2 = _interopRequireDefault(_Input);
-
-var _IntermediateState = __webpack_require__(27);
-
-var _IntermediateState2 = _interopRequireDefault(_IntermediateState);
-
-var _LinkList = __webpack_require__(29);
-
-var _LinkList2 = _interopRequireDefault(_LinkList);
-
-var _ListHeader = __webpack_require__(31);
-
-var _ListHeader2 = _interopRequireDefault(_ListHeader);
-
-var _Panel = __webpack_require__(33);
-
-var _Panel2 = _interopRequireDefault(_Panel);
-
-var _SearchForm = __webpack_require__(35);
-
-var _SearchForm2 = _interopRequireDefault(_SearchForm);
-
-var _SearchInput = __webpack_require__(6);
-
-var _SearchInput2 = _interopRequireDefault(_SearchInput);
-
-var _TruncatedText = __webpack_require__(4);
-
-var _TruncatedText2 = _interopRequireDefault(_TruncatedText);
-
-var _Header = __webpack_require__(7);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _Content = __webpack_require__(3);
-
-var _Content2 = _interopRequireDefault(_Content);
-
-var _Overlay = __webpack_require__(8);
-
-var _Overlay2 = _interopRequireDefault(_Overlay);
-
-var _Toast = __webpack_require__(41);
-
-var _Toast2 = _interopRequireDefault(_Toast);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Button = _Button2.default;
-exports.Icon = _Icon2.default;
-exports.Input = _Input2.default;
-exports.Checkbox = _Checkbox2.default;
-exports.Card = _Card2.default;
-exports.CardList = _CardList2.default;
-exports.CardWithLocation = _CardWithLocation2.default;
-exports.CardDiff = _CardDiff2.default;
-exports.Content = _Content2.default;
-exports.Header = _Header2.default;
-exports.Overlay = _Overlay2.default;
-exports.Toast = _Toast2.default;
-exports.ErrorBox = _ErrorBox2.default;
-exports.IntermediateState = _IntermediateState2.default;
-exports.ListHeader = _ListHeader2.default;
-exports.Panel = _Panel2.default;
-exports.SearchInput = _SearchInput2.default;
-exports.SearchForm = _SearchForm2.default;
-exports.LinkList = _LinkList2.default;
-exports.HorizontalList = _HorizontalList2.default;
-exports.TruncatedText = _TruncatedText2.default;
 
 /***/ }),
 /* 10 */
@@ -1389,7 +1394,7 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(28);
 
-var _ErrorBox = __webpack_require__(5);
+var _ErrorBox = __webpack_require__(6);
 
 var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
@@ -1608,7 +1613,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SearchInput = __webpack_require__(6);
+var _SearchInput = __webpack_require__(7);
 
 var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
@@ -1707,7 +1712,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Overlay = __webpack_require__(8);
+var _Overlay = __webpack_require__(9);
 
 var _Overlay2 = _interopRequireDefault(_Overlay);
 
@@ -1734,6 +1739,84 @@ exports.default = Toast;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _index = __webpack_require__(4);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CtaDrawer = function (_React$Component) {
+	_inherits(CtaDrawer, _React$Component);
+
+	function CtaDrawer() {
+		_classCallCheck(this, CtaDrawer);
+
+		return _possibleConstructorReturn(this, (CtaDrawer.__proto__ || Object.getPrototypeOf(CtaDrawer)).apply(this, arguments));
+	}
+
+	_createClass(CtaDrawer, [{
+		key: 'render',
+		value: function render() {
+			var props = this.props;
+			return _react2.default.createElement(
+				_index.Overlay,
+				null,
+				_react2.default.createElement(
+					'p',
+					null,
+					props.message
+				),
+				_react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(_index.Button, { label: 'Log in', href: props.loginUrl, isPrimary: '1' })
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					_react2.default.createElement(
+						'a',
+						{ href: props.signupUrl },
+						props.signupText
+					)
+				)
+			);
+		}
+	}]);
+
+	return CtaDrawer;
+}(_react2.default.Component);
+
+CtaDrawer.defaultProps = {
+	message: 'You need to sign in to use this feature',
+	loginUrl: '//mediawiki.org/wiki/Special:Userlogin',
+	signupUrl: '//www.mediawiki.org/w/index.php?title=Special:CreateAccount&campaign=wikipedia-react-components',
+	signupText: 'Sign up at MediaWiki.org'
+};
+
+exports.default = CtaDrawer;
 
 /***/ })
 /******/ ]);

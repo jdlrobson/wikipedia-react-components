@@ -2,7 +2,7 @@
  * WikimediaUI Base v0.10.0
  * Wikimedia Foundation user interface base variables
  */
-.mw-notification {
+.mw-notification.drawer {
   z-index: 2;
   position: fixed;
   bottom: 0;
@@ -10,7 +10,7 @@
   background: transparent;
   box-shadow: none;
 }
-.mw-notification .content {
+.mw-notification.drawer .content {
   box-sizing: border-box;
   left: 0;
   right: 0;

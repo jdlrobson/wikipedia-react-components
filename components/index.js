@@ -19,10 +19,12 @@ import Header from './Header';
 import Content from './Content';
 import Overlay from './Overlay';
 import Toast from './Toast';
+import CtaDrawer from './CtaDrawer';
 
 export {
 	Button, Icon, Input, Checkbox,
 	Card,
+	CtaDrawer,
 	CardList,
 	CardWithLocation, CardDiff,
 	Content,

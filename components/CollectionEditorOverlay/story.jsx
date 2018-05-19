@@ -11,4 +11,11 @@ storiesOf( 'CollectionEditorOverlay', module )
 				owner="Wikipedians" onSaveCollection={action( 'onSaveCollection' )}
 				onExit={action( 'onExit' )} />
 		);
+	} )
+	.add( 'button disabled if title not set', () => {
+		return (
+			<CollectionEditorOverlay
+				onSaveCollection={action( 'onSaveCollection' )}
+				onExit={action( 'onExit' )} />
+		);
 	} );

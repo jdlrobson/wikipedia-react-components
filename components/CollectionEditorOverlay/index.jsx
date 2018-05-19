@@ -20,7 +20,8 @@ class CollectionEditorOverlay extends React.Component {
 		};
 	}
 	componentDidMount() {
-		this.setState( { title: '', description: '', waiting: false } );
+		this.setState( { title: this.props.title || '', description: this.props.description || '',
+			waiting: false } );
 	}
 	updateDescription( ev ) {
 		this.setState( { description: ev.currentTarget.value } );
@@ -29,15 +30,18 @@ class CollectionEditorOverlay extends React.Component {
 		this.setState( { title: ev.currentTarget.value } );
 	}
 	save() {
-		var onExit = this.props.onExit.bind( this ),
-			title = this.props.title,
+		var onExit = this.props.onExit ? this.props.onExit.bind( this ) : null,
+			title = this.state.title,
+			description = this.state.description,
 			thumb = this.state.thumbnail ? this.state.thumbnail.title : null;
 
 		this.setState( { waiting: true } );
-		const done = this.props.onSaveCollection( title, thumb, this.state.description );
+		const done = this.props.onSaveCollection( title, description, thumb );
 		if ( done ) {
 			done.then( function () {
-				onExit();
+				if ( onExit ) {
+					onExit();
+				}
 			} );
 		}
 	}
@@ -49,7 +53,7 @@ class CollectionEditorOverlay extends React.Component {
 			thumbnail = state.thumbnail || props.thumbnail,
 			title = state.title || props.title;
 
-		if ( !this.state.waiting && this.state.title !== undefined ) {
+		if ( !state.waiting && state.title !== undefined ) {
 			body = (
 				<div>
 					<CollectionCard key="collection-editor-overlay-preview"
@@ -58,8 +62,9 @@ class CollectionEditorOverlay extends React.Component {
 					<Input defaultValue={title} onInput={this.updateTitle.bind( this )} />
 					<label>{props.descriptionFieldLabel}</label>
 					<Input defaultValue={description} onInput={this.updateDescription.bind( this )} />
-					<Button label={props.buttonSaveLabel} isPrimary={true} onClick={this.save.bind( this )} />
-					<Button label={props.buttonCancelLabel} onClick={props.onExit.bind( this )} />
+					<Button label={props.buttonSaveLabel} disabled={!title}
+						isPrimary={true} onClick={this.save.bind( this )} />
+					<Button label={props.buttonCancelLabel} onClick={props.onExit ? props.onExit.bind( this ) : null} />
 				</div>
 			);
 		} else {

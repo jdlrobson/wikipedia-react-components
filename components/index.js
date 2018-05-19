@@ -20,10 +20,13 @@ import Content from './Content';
 import Overlay from './Overlay';
 import Toast from './Toast';
 import CtaDrawer from './CtaDrawer';
+import CollectionCard from './CollectionCard';
+import CollectionEditorOverlay from './CollectionEditorOverlay';
 
 export {
 	Button, Icon, Input, Checkbox,
 	Card,
+	CollectionCard, CollectionEditorOverlay,
 	CtaDrawer,
 	CardList,
 	CardWithLocation, CardDiff,

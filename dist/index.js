@@ -1969,7 +1969,8 @@ var CollectionEditorOverlay = function (_React$Component) {
 	_createClass(CollectionEditorOverlay, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			this.setState({ title: '', description: '', waiting: false });
+			this.setState({ title: this.props.title || '', description: this.props.description || '',
+				waiting: false });
 		}
 	}, {
 		key: 'updateDescription',
@@ -1984,15 +1985,18 @@ var CollectionEditorOverlay = function (_React$Component) {
 	}, {
 		key: 'save',
 		value: function save() {
-			var onExit = this.props.onExit.bind(this),
-			    title = this.props.title,
+			var onExit = this.props.onExit ? this.props.onExit.bind(this) : null,
+			    title = this.state.title,
+			    description = this.state.description,
 			    thumb = this.state.thumbnail ? this.state.thumbnail.title : null;
 
 			this.setState({ waiting: true });
-			var done = this.props.onSaveCollection(title, thumb, this.state.description);
+			var done = this.props.onSaveCollection(title, description, thumb);
 			if (done) {
 				done.then(function () {
-					onExit();
+					if (onExit) {
+						onExit();
+					}
 				});
 			}
 		}
@@ -2006,7 +2010,7 @@ var CollectionEditorOverlay = function (_React$Component) {
 			    thumbnail = state.thumbnail || props.thumbnail,
 			    title = state.title || props.title;
 
-			if (!this.state.waiting && this.state.title !== undefined) {
+			if (!state.waiting && state.title !== undefined) {
 				body = _react2.default.createElement(
 					'div',
 					null,
@@ -2024,8 +2028,9 @@ var CollectionEditorOverlay = function (_React$Component) {
 						props.descriptionFieldLabel
 					),
 					_react2.default.createElement(_Input2.default, { defaultValue: description, onInput: this.updateDescription.bind(this) }),
-					_react2.default.createElement(_Button2.default, { label: props.buttonSaveLabel, isPrimary: true, onClick: this.save.bind(this) }),
-					_react2.default.createElement(_Button2.default, { label: props.buttonCancelLabel, onClick: props.onExit.bind(this) })
+					_react2.default.createElement(_Button2.default, { label: props.buttonSaveLabel, disabled: !title,
+						isPrimary: true, onClick: this.save.bind(this) }),
+					_react2.default.createElement(_Button2.default, { label: props.buttonCancelLabel, onClick: props.onExit ? props.onExit.bind(this) : null })
 				);
 			} else {
 				body = _react2.default.createElement(_IntermediateState2.default, null);

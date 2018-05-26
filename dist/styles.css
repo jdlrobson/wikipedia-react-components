@@ -763,7 +763,7 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
   color: #888;
   font-size: .8em;
   padding-right: .2em;
-  margin-top: 2px;
+  margin: 2px 0 0;
 }
 .card-extract > * {
   display: block;

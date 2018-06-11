@@ -1,4 +1,4 @@
-.collection-editor-overlay {
+.drawer.collection-editor-overlay {
   top: 0.3em;
   bottom: 0.3em;
   left: 2em;
@@ -8,13 +8,13 @@
   text-align: left;
   padding-top: 8px;
 }
-.collection-editor-overlay label {
+.drawer.collection-editor-overlay label {
   margin-top: 2em;
   font-weight: bold;
   margin-bottom: 0.5em;
   display: block;
 }
-.collection-editor-overlay input {
+.drawer.collection-editor-overlay input {
   margin-bottom: 20px;
 }
 .mw-ui-icon-user:before {
@@ -521,7 +521,8 @@ ul.hlist li:last-child {
   margin-right: 0;
 }
 .hlist {
-  padding-bottom: 8px;
+  margin: 0 !important;
+  padding: 0 0 8px 0 !important;
 }
 .hlist.separated li:after {
   content: '\2022';
@@ -704,6 +705,7 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
   display: inline-block;
 }
 .card {
+  text-align: left;
   background-color: #fff;
   box-sizing: border-box;
   flex: 1 0 auto;

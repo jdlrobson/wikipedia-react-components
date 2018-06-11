@@ -1,7 +1,8 @@
 {
   "name": "wikipedia-react-components",
   "description": "wikipedia style react components",
-  "version": "1.6.10",
+  "version": "1.6.11",
+  "license": "GPL-2.0+",
   "babel": {
     "presets": [
       "es2015",

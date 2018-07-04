@@ -7,7 +7,8 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
   display: inline-block;
   min-width: 4em;
   max-width: 28.75em;
-  padding: .5em 1em;
+  padding: 0.546875em 1em;
+  line-height: 1.286;
   margin: 0;
   border-radius: 2px;
   -webkit-box-sizing: border-box;
@@ -15,11 +16,12 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
   box-sizing: border-box;
   -webkit-appearance: none;
   *display: inline;
+  /* stylelint-disable-line declaration-block-no-duplicate-properties */
   zoom: 1;
   vertical-align: middle;
   background-color: #f8f9fa;
   color: #222222;
-  border: 1px solid #9aa0a7;
+  border: 1px solid #a2a9b1;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
@@ -83,107 +85,73 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
   margin-left: auto;
   margin-right: auto;
 }
-.mw-ui-button.mw-ui-progressive,
-.mw-ui-button.mw-ui-constructive,
-.mw-ui-button.mw-ui-primary {
+.mw-ui-button.mw-ui-progressive {
   background-color: #3366cc;
   color: #fff;
   border: 1px solid #3366cc;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
 }
-.mw-ui-button.mw-ui-progressive:hover,
-.mw-ui-button.mw-ui-constructive:hover,
-.mw-ui-button.mw-ui-primary:hover {
+.mw-ui-button.mw-ui-progressive:hover {
   background-color: #447ff5;
   border-color: #447ff5;
 }
-.mw-ui-button.mw-ui-progressive:focus,
-.mw-ui-button.mw-ui-constructive:focus,
-.mw-ui-button.mw-ui-primary:focus {
+.mw-ui-button.mw-ui-progressive:focus {
   box-shadow: inset 0 0 0 1px #3366cc, inset 0 0 0 2px #ffffff;
 }
 .mw-ui-button.mw-ui-progressive:active,
-.mw-ui-button.mw-ui-constructive:active,
-.mw-ui-button.mw-ui-primary:active,
 .mw-ui-button.mw-ui-progressive.is-on,
-.mw-ui-button.mw-ui-constructive.is-on,
-.mw-ui-button.mw-ui-primary.is-on,
-.mw-ui-button.mw-ui-progressive.mw-ui-checked,
-.mw-ui-button.mw-ui-constructive.mw-ui-checked,
-.mw-ui-button.mw-ui-primary.mw-ui-checked {
+.mw-ui-button.mw-ui-progressive.mw-ui-checked {
   background-color: #2a4b8d;
   border-color: #2a4b8d;
   box-shadow: none;
 }
-.mw-ui-button.mw-ui-progressive:disabled,
-.mw-ui-button.mw-ui-constructive:disabled,
-.mw-ui-button.mw-ui-primary:disabled {
+.mw-ui-button.mw-ui-progressive:disabled {
   background-color: #c8ccd1;
   color: #fff;
   border-color: #c8ccd1;
 }
 .mw-ui-button.mw-ui-progressive:disabled:hover,
-.mw-ui-button.mw-ui-constructive:disabled:hover,
-.mw-ui-button.mw-ui-primary:disabled:hover,
 .mw-ui-button.mw-ui-progressive:disabled:active,
-.mw-ui-button.mw-ui-constructive:disabled:active,
-.mw-ui-button.mw-ui-primary:disabled:active,
-.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,
-.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked,
-.mw-ui-button.mw-ui-primary:disabled.mw-ui-checked {
+.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked {
   background-color: #c8ccd1;
   color: #fff;
   border-color: #c8ccd1;
   box-shadow: none;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet {
   color: #222222;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:hover {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover {
   background-color: transparent;
   color: #447ff5;
 }
 .mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:active,
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet.mw-ui-checked {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked {
   color: #2a4b8d;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:focus {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus {
   background-color: transparent;
   color: #3366cc;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:disabled {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled {
   color: #c8ccd1;
 }
 .mw-ui-button.mw-ui-destructive {
-  background-color: #cc3333;
+  background-color: #dd3333;
   color: #fff;
-  border: 1px solid #cc3333;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dd3333;
 }
 .mw-ui-button.mw-ui-destructive:hover {
-  background-color: #e53939;
-  border-color: #e53939;
+  background-color: #ff4242;
+  border-color: #ff4242;
 }
 .mw-ui-button.mw-ui-destructive:focus {
-  box-shadow: inset 0 0 0 1px #cc3333, inset 0 0 0 2px #ffffff;
+  box-shadow: inset 0 0 0 1px #dd3333, inset 0 0 0 2px #ffffff;
 }
 .mw-ui-button.mw-ui-destructive:active,
 .mw-ui-button.mw-ui-destructive.is-on,
 .mw-ui-button.mw-ui-destructive.mw-ui-checked {
-  background-color: #873636;
-  border-color: #873636;
+  background-color: #b32424;
+  border-color: #b32424;
   box-shadow: none;
 }
 .mw-ui-button.mw-ui-destructive:disabled {
@@ -204,15 +172,15 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover {
   background-color: transparent;
-  color: #e53939;
+  color: #ff4242;
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked {
-  color: #873636;
+  color: #b32424;
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus {
   background-color: transparent;
-  color: #cc3333;
+  color: #dd3333;
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled {
   color: #c8ccd1;
@@ -246,9 +214,13 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
 .mw-ui-button.mw-ui-quiet:disabled {
   background: transparent;
 }
+input.mw-ui-button::-moz-focus-inner,
+button.mw-ui-button::-moz-focus-inner {
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
 a.mw-ui-button {
   text-decoration: none;
-  line-height: normal;
 }
 a.mw-ui-button:hover,
 a.mw-ui-button:focus {

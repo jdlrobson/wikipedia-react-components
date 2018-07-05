@@ -13,7 +13,7 @@ class Button extends Component {
 		var btnProps,
 			props = this.props,
 			disabled = false,
-			modifiers = props.isPrimary ? 'mw-ui-primary' : '';
+			modifiers = props.isPrimary ? 'mw-ui-primary mw-ui-progressive' : '';
 
 		modifiers += props.isQuiet ? 'mw-ui-quiet' : '';
 		modifiers += props.className ? ' ' + props.className : '';

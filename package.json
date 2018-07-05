@@ -14,12 +14,13 @@
     "url": "https://github.com/jdlrobson/wikipedia-react-components.git"
   },
   "scripts": {
+    "start": "build-storybook -c .storybook -o .out",
     "lint": "eslint . --ext .jsx --ext .js",
     "lint:fix": "eslint . --ext .jsx --ext .js  --fix",
     "compile": "webpack --output-path dist/",
     "build": "npm run compile && npm run storybook",
     "prepublish": "npm run compile",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "npm run build-storybook && start-storybook -p 8080",
     "build-storybook": "build-storybook"
   },
   "main": "dist/index.js",

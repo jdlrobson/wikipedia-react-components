@@ -222,7 +222,7 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=skins.minerva.ta
 .header > div.main {
   width: 100%;
   vertical-align: middle;
-  padding: .15em 1em .15em 0;
+  padding: 0.15em 1em 0.15em 0;
 }
 .header > div.main h2 {
   display: table;
@@ -283,7 +283,7 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=skins.minerva.ta
   text-overflow: ellipsis;
 }
 input.search {
-  padding: .5em 28px;
+  padding: 0.5em 28px;
   background-position: left 6px center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
@@ -369,41 +369,42 @@ input.search {
 
 .mw-ui-input {
   background-color: #fff;
+  color: #000000;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   width: 100%;
-  border: 1px solid #9aa0a7;
+  border: 1px solid #a2a9b1;
   border-radius: 2px;
-  padding: 0.3em 0.3em 0.3em 0.6em;
+  padding: 0.57142857em 0.57142857em 0.5em;
   box-shadow: inset 0 0 0 0.1em #fff;
   font-family: inherit;
   font-size: inherit;
-  line-height: inherit;
+  line-height: 1.07142857em;
   vertical-align: middle;
+  /* stylelint-disable indentation */
+  /* stylelint-enable indentation */
 }
-.mw-ui-input:-moz-placeholder {
+.mw-ui-input::-webkit-input-placeholder {
   color: #72777d;
-  font-style: italic;
-  opacity: 1;
-}
-.mw-ui-input::-moz-placeholder {
-  color: #72777d;
-  font-style: italic;
   opacity: 1;
 }
 .mw-ui-input:-ms-input-placeholder {
   color: #72777d;
-  font-style: italic;
+  opacity: 1;
 }
-.mw-ui-input::-webkit-input-placeholder {
+.mw-ui-input::-moz-placeholder {
   color: #72777d;
-  font-style: italic;
+  opacity: 1;
 }
-.mw-ui-input:placeholder-shown {
+.mw-ui-input:-moz-placeholder {
   color: #72777d;
-  font-style: italic;
+  opacity: 1;
+}
+.mw-ui-input::placeholder {
+  color: #72777d;
+  opacity: 1;
 }
 .mw-ui-input:invalid {
   box-shadow: none;
@@ -425,20 +426,19 @@ input.search {
   border-color: #eaecf0;
   color: #c8ccd1;
 }
-.mw-ui-input[type="search"] {
+.mw-ui-input[type='search'] {
   -webkit-appearance: textfield;
 }
-.mw-ui-input[type="search"]::-ms-clear {
+.mw-ui-input[type='search']::-ms-clear {
   display: none;
 }
-.mw-ui-input[type="search"]::-webkit-search-cancel-button,
-.mw-ui-input[type="search"]::-webkit-search-decoration {
+.mw-ui-input[type='search']::-webkit-search-cancel-button,
+.mw-ui-input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 textarea.mw-ui-input {
   min-height: 8em;
 }
-input[type="number"],
 .mw-ui-input-inline {
   display: inline-block;
   width: auto;
@@ -458,17 +458,20 @@ input.mw-ui-input-large {
   font-size: 1.75em;
   font-weight: bold;
   line-height: 1.25em;
-}/*
+  padding: 0.3673em 0.3265em 0.3265em;
+}
+/*
 https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.icon&only=styles&debug=true
 */
 .mw-ui-icon {
   position: relative;
+  line-height: 1.5em;
   min-height: 1.5em;
   min-width: 1.5em;
-  display: inline-block;
-  line-height: 1.5em;
 }
-
+span.mw-ui-icon {
+  display: inline-block;
+}
 .mw-ui-icon.mw-ui-icon-element {
   text-indent: -999px;
   overflow: hidden;
@@ -482,6 +485,16 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.ico
   position: absolute;
   margin: 0 1em;
 }
+.mw-ui-icon.mw-ui-icon-element.mw-ui-icon-large {
+  width: 4.625em;
+  min-width: 4.625em;
+  max-width: 4.625em;
+  line-height: 4.625em;
+  min-height: 4.625em;
+}
+.mw-ui-icon.mw-ui-icon-element.mw-ui-icon-large:before {
+  min-height: 4.625em;
+}
 .mw-ui-icon.mw-ui-icon-before:before,
 .mw-ui-icon.mw-ui-icon-element:before {
   background-position: 50% 50%;
@@ -492,27 +505,13 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.ico
   min-height: 1.5em;
   content: '';
 }
-
-.mw-ui-icon.mw-ui-icon-small:before {
-  background-size: 75% auto;
-}
-
 .mw-ui-icon.mw-ui-icon-before:before {
   position: relative;
   width: 1.5em;
   margin-right: 1em;
 }
-
-.mw-ui-icon.mw-ui-icon-element.mw-ui-icon-large {
-  width: 5em;
-  min-width: 5em;
-  max-width: 5em;
-  min-height: 5em;
-  line-height: 5em;
-}
-
-.mw-ui-icon.mw-ui-icon-large:before {
-   min-height: 5em;
+.mw-ui-icon.mw-ui-icon-small:before {
+  background-size: 66.67% auto;
 }
 .hlist > ul li,
 ul.hlist li {
@@ -549,35 +548,36 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
 */
 .mw-ui-checkbox {
   display: inline-block;
+  line-height: 1.5625em;
   vertical-align: middle;
 }
-.client-js .mw-ui-checkbox:not( #noop ) {
-  position: relative;
+.mw-ui-checkbox:not( #noop ) {
   display: table;
+  position: relative;
 }
-.client-js .mw-ui-checkbox:not( #noop ) * {
+.mw-ui-checkbox:not( #noop ) * {
   font: inherit;
   vertical-align: middle;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"] {
+.mw-ui-checkbox:not( #noop ) [type='checkbox'] {
+  display: table-cell;
+  position: relative;
+  width: 1.5625em;
+  height: 1.5625em;
+  max-width: none;
+  margin: 0;
   opacity: 0;
   z-index: 1;
-  position: relative;
-  width: 2em;
-  height: 2em;
-  max-width: none;
-  margin: 0 0.4em 0 0;
-  display: table-cell;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"] + label {
+.mw-ui-checkbox:not( #noop ) [type='checkbox'] + label {
   display: table-cell;
+  padding-left: 0.4em;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"] + label::before {
+.mw-ui-checkbox:not( #noop ) [type='checkbox'] + label:before {
   content: '';
   background-color: #fff;
-  background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A);
-  background-position: center center;
   background-origin: border-box;
+  background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: 0 0;
   background-size: 0 0;
@@ -587,37 +587,64 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
   position: absolute;
   top: 50%;
   left: 0;
-  width: 2em;
-  height: 2em;
-  margin-top: -1em;
+  width: 1.5625em;
+  height: 1.5625em;
+  margin-top: -0.78125em;
   border: 1px solid #72777d;
   border-radius: 2px;
-  line-height: 2em;
+}
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:checked + label:before {
+  background-image: url(/w/resources/src/mediawiki.ui/components/images/checkbox-checked.png?6f2e5);
+  background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E %3Cpath fill=%22%23fff%22 d=%22M17 7.5L9.5 15 6 11.5 4.5 13l5 5L20 7.5c-.706-.706-2.294-.706-3 0z%22/%3E %3C/svg%3E");
+  -webkit-background-size: 90% 90%;
+  background-size: 90% 90%;
+}
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled {
   cursor: pointer;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:checked + label::before {
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled + label {
+  cursor: pointer;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:active + label::before {
-  background-color: #dddddd;
-  border-color: #dddddd;
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled + label:before {
+  cursor: pointer;
+  -webkit-transition: background-color 100ms, color 100ms, border-color 100ms, box-shadow 100ms;
+  -moz-transition: background-color 100ms, color 100ms, border-color 100ms, box-shadow 100ms;
+  transition: background-color 100ms, color 100ms, border-color 100ms, box-shadow 100ms;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:focus + label::before {
-  border-width: 2px;
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled:focus + label:before {
+  border-color: #3366cc;
+  box-shadow: inset 0 0 0 1px #3366cc;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:focus:hover + label::before,
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:hover + label::before {
-  border-bottom-width: 3px;
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled:hover + label:before {
+  border-color: #3366cc;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:disabled + label::before {
-  cursor: default;
-  background-color: #eaecf0;
-  border-color: #eaecf0;
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled:active + label:before {
+  background-color: #2a4b8d;
+  border-color: #2a4b8d;
+  box-shadow: inset 0 0 0 1px #2a4b8d;
 }
-.client-js .mw-ui-checkbox:not( #noop ) input[type="checkbox"]:disabled:checked + label::before {
-  background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A);
-}.card-list {
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled:checked + label:before {
+  background-color: #3366cc;
+  border-color: #3366cc;
+}
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled:checked:focus + label:before {
+  background-color: #3366cc;
+  border-color: #3366cc;
+  box-shadow: inset 0 0 0 1px #3366cc, inset 0 0 0 2px #ffffff;
+}
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled:checked:hover + label:before {
+  background-color: #447ff5;
+  border-color: #447ff5;
+}
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:enabled:checked:active + label:before {
+  background-color: #2a4b8d;
+  border-color: #2a4b8d;
+}
+.mw-ui-checkbox:not( #noop ) [type='checkbox']:disabled + label:before {
+  background-color: #c8ccd1;
+  border-color: #c8ccd1;
+}
+.card-list {
   box-shadow: 0 3px 3px 0 rgba(117, 117, 117, 0.3);
   margin-bottom: 20px;
 }
@@ -675,11 +702,11 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
 }
 .card.card-diff .card-extract {
   margin: 2px 0 0.5em;
-  padding: 0 .2em 0;
+  padding: 0 0.2em 0;
 }
 .card.card-diff .meta {
   font-size: 0.9em;
-  padding: .9em 16px;
+  padding: 0.9em 16px;
   color: #252525;
 }
 .card.card-diff .meta p {
@@ -766,8 +793,8 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
 }
 .card-extract {
   color: #888;
-  font-size: .8em;
-  padding-right: .2em;
+  font-size: 0.8em;
+  padding-right: 0.2em;
   margin: 2px 0 0;
 }
 .card-extract > * {
@@ -782,7 +809,8 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
   display: inline-block;
   min-width: 4em;
   max-width: 28.75em;
-  padding: .5em 1em;
+  padding: 0.546875em 1em;
+  line-height: 1.286;
   margin: 0;
   border-radius: 2px;
   -webkit-box-sizing: border-box;
@@ -790,11 +818,12 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
   box-sizing: border-box;
   -webkit-appearance: none;
   *display: inline;
+  /* stylelint-disable-line declaration-block-no-duplicate-properties */
   zoom: 1;
   vertical-align: middle;
   background-color: #f8f9fa;
   color: #222222;
-  border: 1px solid #9aa0a7;
+  border: 1px solid #a2a9b1;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
@@ -858,107 +887,73 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
   margin-left: auto;
   margin-right: auto;
 }
-.mw-ui-button.mw-ui-progressive,
-.mw-ui-button.mw-ui-constructive,
-.mw-ui-button.mw-ui-primary {
+.mw-ui-button.mw-ui-progressive {
   background-color: #3366cc;
   color: #fff;
   border: 1px solid #3366cc;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
 }
-.mw-ui-button.mw-ui-progressive:hover,
-.mw-ui-button.mw-ui-constructive:hover,
-.mw-ui-button.mw-ui-primary:hover {
+.mw-ui-button.mw-ui-progressive:hover {
   background-color: #447ff5;
   border-color: #447ff5;
 }
-.mw-ui-button.mw-ui-progressive:focus,
-.mw-ui-button.mw-ui-constructive:focus,
-.mw-ui-button.mw-ui-primary:focus {
+.mw-ui-button.mw-ui-progressive:focus {
   box-shadow: inset 0 0 0 1px #3366cc, inset 0 0 0 2px #ffffff;
 }
 .mw-ui-button.mw-ui-progressive:active,
-.mw-ui-button.mw-ui-constructive:active,
-.mw-ui-button.mw-ui-primary:active,
 .mw-ui-button.mw-ui-progressive.is-on,
-.mw-ui-button.mw-ui-constructive.is-on,
-.mw-ui-button.mw-ui-primary.is-on,
-.mw-ui-button.mw-ui-progressive.mw-ui-checked,
-.mw-ui-button.mw-ui-constructive.mw-ui-checked,
-.mw-ui-button.mw-ui-primary.mw-ui-checked {
+.mw-ui-button.mw-ui-progressive.mw-ui-checked {
   background-color: #2a4b8d;
   border-color: #2a4b8d;
   box-shadow: none;
 }
-.mw-ui-button.mw-ui-progressive:disabled,
-.mw-ui-button.mw-ui-constructive:disabled,
-.mw-ui-button.mw-ui-primary:disabled {
+.mw-ui-button.mw-ui-progressive:disabled {
   background-color: #c8ccd1;
   color: #fff;
   border-color: #c8ccd1;
 }
 .mw-ui-button.mw-ui-progressive:disabled:hover,
-.mw-ui-button.mw-ui-constructive:disabled:hover,
-.mw-ui-button.mw-ui-primary:disabled:hover,
 .mw-ui-button.mw-ui-progressive:disabled:active,
-.mw-ui-button.mw-ui-constructive:disabled:active,
-.mw-ui-button.mw-ui-primary:disabled:active,
-.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,
-.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked,
-.mw-ui-button.mw-ui-primary:disabled.mw-ui-checked {
+.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked {
   background-color: #c8ccd1;
   color: #fff;
   border-color: #c8ccd1;
   box-shadow: none;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet {
   color: #222222;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:hover {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover {
   background-color: transparent;
   color: #447ff5;
 }
 .mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:active,
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet.mw-ui-checked {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked {
   color: #2a4b8d;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:focus {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus {
   background-color: transparent;
   color: #3366cc;
 }
-.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,
-.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled,
-.mw-ui-button.mw-ui-primary.mw-ui-quiet:disabled {
+.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled {
   color: #c8ccd1;
 }
 .mw-ui-button.mw-ui-destructive {
-  background-color: #cc3333;
+  background-color: #dd3333;
   color: #fff;
-  border: 1px solid #cc3333;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dd3333;
 }
 .mw-ui-button.mw-ui-destructive:hover {
-  background-color: #e53939;
-  border-color: #e53939;
+  background-color: #ff4242;
+  border-color: #ff4242;
 }
 .mw-ui-button.mw-ui-destructive:focus {
-  box-shadow: inset 0 0 0 1px #cc3333, inset 0 0 0 2px #ffffff;
+  box-shadow: inset 0 0 0 1px #dd3333, inset 0 0 0 2px #ffffff;
 }
 .mw-ui-button.mw-ui-destructive:active,
 .mw-ui-button.mw-ui-destructive.is-on,
 .mw-ui-button.mw-ui-destructive.mw-ui-checked {
-  background-color: #873636;
-  border-color: #873636;
+  background-color: #b32424;
+  border-color: #b32424;
   box-shadow: none;
 }
 .mw-ui-button.mw-ui-destructive:disabled {
@@ -979,15 +974,15 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover {
   background-color: transparent;
-  color: #e53939;
+  color: #ff4242;
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked {
-  color: #873636;
+  color: #b32424;
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus {
   background-color: transparent;
-  color: #cc3333;
+  color: #dd3333;
 }
 .mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled {
   color: #c8ccd1;
@@ -1021,9 +1016,13 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.but
 .mw-ui-button.mw-ui-quiet:disabled {
   background: transparent;
 }
+input.mw-ui-button::-moz-focus-inner,
+button.mw-ui-button::-moz-focus-inner {
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
 a.mw-ui-button {
   text-decoration: none;
-  line-height: normal;
 }
 a.mw-ui-button:hover,
 a.mw-ui-button:focus {

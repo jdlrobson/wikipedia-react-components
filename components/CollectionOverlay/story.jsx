@@ -7,12 +7,6 @@ import Icon from './../Icon';
 import './icons.less';
 
 storiesOf( 'CollectionOverlay', module )
-	.add( 'default', () => {
-		return (
-			<CollectionOverlay onExit={action( 'onExit' )}>
-			</CollectionOverlay>
-		);
-	} )
 	.add( 'with list', () => {
 		return (
 			<CollectionOverlay onExit={action( 'onExit' )}>
@@ -28,7 +22,7 @@ storiesOf( 'CollectionOverlay', module )
 		return (
 			<CollectionOverlay onExit={action( 'onExit' )}
 				actions={[
-					<a>Create</a> 
+					<a>Create</a>
 				]}
 			>
 				<ul>

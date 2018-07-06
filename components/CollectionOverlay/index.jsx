@@ -10,10 +10,10 @@ export default class CollectionOverlay extends React.Component {
         var cancelMsg = props.cancelMsg || 'Cancel';
 
         return (
-            <Overlay {...props} className="collection-overlay" isDrawer={true}>
+            <Overlay {...props} className={"collection-overlay " + props.className} isDrawer={true}>
                 <h2>{title}</h2>
-                <a key='edit-collection-cancel' className="cancel"
-                    onClick={props.onExit}>{cancelMsg}</a>
+                { props.onExit && <a key='edit-collection-cancel' className="cancel"
+                    onClick={props.onExit}>{cancelMsg}</a> }
                 {props.children}
                 <div className="collection-actions" key="collection-overlay-actions">
                     {props.actions}

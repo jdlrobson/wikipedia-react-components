@@ -5,7 +5,7 @@ import Input from './../Input';
 import IntermediateState from './../IntermediateState';
 import CollectionCard from './../CollectionCard';
 
-import Overlay from './../Overlay';
+import CollectionOverlay from './../CollectionOverlay';
 
 import './styles.less';
 
@@ -49,9 +49,12 @@ class CollectionEditorOverlay extends React.Component {
 		var body,
 			props = this.props,
 			state = this.state,
+			editTitle = props.editTitle || "Edit collection",
+			createTitle = props.createTitle || "Create collection",
 			description = state.description || props.description,
 			thumbnail = state.thumbnail || props.thumbnail,
-			title = state.title || props.title;
+			title = state.title || props.title,
+			overlayTitle = title ? editTitle : createTitle;
 
 		if ( !state.waiting && state.title !== undefined ) {
 			body = (
@@ -71,9 +74,9 @@ class CollectionEditorOverlay extends React.Component {
 			body = <IntermediateState />;
 		}
 		return (
-			<Overlay {...props} className="collection-editor-overlay" isDrawer={true}>
+			<CollectionOverlay {...props} className="collection-editor-overlay" title={overlayTitle} onExit={false}>
 				{body}
-			</Overlay>
+			</CollectionOverlay>
 		);
 	}
 }

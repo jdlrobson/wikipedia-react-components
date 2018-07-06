@@ -22,11 +22,12 @@ import Toast from './Toast';
 import CtaDrawer from './CtaDrawer';
 import CollectionCard from './CollectionCard';
 import CollectionEditorOverlay from './CollectionEditorOverlay';
+import CollectionOverlay from './CollectionOverlay';
 
 export {
 	Button, Icon, Input, Checkbox,
 	Card,
-	CollectionCard, CollectionEditorOverlay,
+	CollectionCard, CollectionEditorOverlay, CollectionOverlay,
 	CtaDrawer,
 	CardList,
 	CardWithLocation, CardDiff,

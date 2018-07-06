@@ -100,7 +100,7 @@ var _TruncatedText = __webpack_require__(7);
 
 var _TruncatedText2 = _interopRequireDefault(_TruncatedText);
 
-__webpack_require__(16);
+__webpack_require__(17);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -215,7 +215,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(19);
+__webpack_require__(20);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -304,7 +304,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(39);
+__webpack_require__(40);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -335,7 +335,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(41);
+__webpack_require__(42);
 
 var _Icon = __webpack_require__(2);
 
@@ -465,7 +465,7 @@ exports.default = Overlay;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.Toast = exports.Overlay = exports.Header = exports.Content = exports.CardDiff = exports.CardWithLocation = exports.CardList = exports.CtaDrawer = exports.CollectionEditorOverlay = exports.CollectionCard = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
+exports.TruncatedText = exports.HorizontalList = exports.LinkList = exports.SearchForm = exports.SearchInput = exports.Panel = exports.ListHeader = exports.IntermediateState = exports.ErrorBox = exports.Toast = exports.Overlay = exports.Header = exports.Content = exports.CardDiff = exports.CardWithLocation = exports.CardList = exports.CtaDrawer = exports.CollectionOverlay = exports.CollectionEditorOverlay = exports.CollectionCard = exports.Card = exports.Checkbox = exports.Input = exports.Icon = exports.Button = undefined;
 
 var _Button = __webpack_require__(6);
 
@@ -475,19 +475,19 @@ var _Card = __webpack_require__(1);
 
 var _Card2 = _interopRequireDefault(_Card);
 
-var _CardDiff = __webpack_require__(17);
+var _CardDiff = __webpack_require__(18);
 
 var _CardDiff2 = _interopRequireDefault(_CardDiff);
 
-var _CardList = __webpack_require__(20);
+var _CardList = __webpack_require__(21);
 
 var _CardList2 = _interopRequireDefault(_CardList);
 
-var _CardWithLocation = __webpack_require__(22);
+var _CardWithLocation = __webpack_require__(23);
 
 var _CardWithLocation2 = _interopRequireDefault(_CardWithLocation);
 
-var _Checkbox = __webpack_require__(23);
+var _Checkbox = __webpack_require__(24);
 
 var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
@@ -495,7 +495,7 @@ var _ErrorBox = __webpack_require__(8);
 
 var _ErrorBox2 = _interopRequireDefault(_ErrorBox);
 
-var _HorizontalList = __webpack_require__(26);
+var _HorizontalList = __webpack_require__(27);
 
 var _HorizontalList2 = _interopRequireDefault(_HorizontalList);
 
@@ -511,19 +511,19 @@ var _IntermediateState = __webpack_require__(10);
 
 var _IntermediateState2 = _interopRequireDefault(_IntermediateState);
 
-var _LinkList = __webpack_require__(30);
+var _LinkList = __webpack_require__(31);
 
 var _LinkList2 = _interopRequireDefault(_LinkList);
 
-var _ListHeader = __webpack_require__(32);
+var _ListHeader = __webpack_require__(33);
 
 var _ListHeader2 = _interopRequireDefault(_ListHeader);
 
-var _Panel = __webpack_require__(34);
+var _Panel = __webpack_require__(35);
 
 var _Panel2 = _interopRequireDefault(_Panel);
 
-var _SearchForm = __webpack_require__(36);
+var _SearchForm = __webpack_require__(37);
 
 var _SearchForm2 = _interopRequireDefault(_SearchForm);
 
@@ -547,11 +547,11 @@ var _Overlay = __webpack_require__(4);
 
 var _Overlay2 = _interopRequireDefault(_Overlay);
 
-var _Toast = __webpack_require__(42);
+var _Toast = __webpack_require__(43);
 
 var _Toast2 = _interopRequireDefault(_Toast);
 
-var _CtaDrawer = __webpack_require__(44);
+var _CtaDrawer = __webpack_require__(45);
 
 var _CtaDrawer2 = _interopRequireDefault(_CtaDrawer);
 
@@ -559,9 +559,13 @@ var _CollectionCard = __webpack_require__(13);
 
 var _CollectionCard2 = _interopRequireDefault(_CollectionCard);
 
-var _CollectionEditorOverlay = __webpack_require__(46);
+var _CollectionEditorOverlay = __webpack_require__(47);
 
 var _CollectionEditorOverlay2 = _interopRequireDefault(_CollectionEditorOverlay);
+
+var _CollectionOverlay = __webpack_require__(14);
+
+var _CollectionOverlay2 = _interopRequireDefault(_CollectionOverlay);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -572,6 +576,7 @@ exports.Checkbox = _Checkbox2.default;
 exports.Card = _Card2.default;
 exports.CollectionCard = _CollectionCard2.default;
 exports.CollectionEditorOverlay = _CollectionEditorOverlay2.default;
+exports.CollectionOverlay = _CollectionOverlay2.default;
 exports.CtaDrawer = _CtaDrawer2.default;
 exports.CardList = _CardList2.default;
 exports.CardWithLocation = _CardWithLocation2.default;
@@ -607,7 +612,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(14);
+__webpack_require__(15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -690,7 +695,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(15);
+__webpack_require__(16);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -719,7 +724,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(25);
+__webpack_require__(26);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -727,7 +732,7 @@ var ErrorBox = function ErrorBox(props) {
 	return _react2.default.createElement(
 		'div',
 		{ className: 'errorbox' },
-		props.msg
+		props.msg || props.children
 	);
 };
 
@@ -748,7 +753,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(28);
+__webpack_require__(29);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -790,7 +795,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(29);
+__webpack_require__(30);
 
 var _ErrorBox = __webpack_require__(8);
 
@@ -864,7 +869,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(37);
+__webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -946,7 +951,7 @@ var _Content = __webpack_require__(3);
 
 var _Content2 = _interopRequireDefault(_Content);
 
-__webpack_require__(40);
+__webpack_require__(41);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1045,7 +1050,7 @@ var _Icon = __webpack_require__(2);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-__webpack_require__(45);
+__webpack_require__(46);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1086,9 +1091,81 @@ exports.default = CollectionCard;
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Overlay = __webpack_require__(4);
+
+var _Overlay2 = _interopRequireDefault(_Overlay);
+
+__webpack_require__(48);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CollectionOverlay = function (_React$Component) {
+    _inherits(CollectionOverlay, _React$Component);
+
+    function CollectionOverlay() {
+        _classCallCheck(this, CollectionOverlay);
+
+        return _possibleConstructorReturn(this, (CollectionOverlay.__proto__ || Object.getPrototypeOf(CollectionOverlay)).apply(this, arguments));
+    }
+
+    _createClass(CollectionOverlay, [{
+        key: 'render',
+        value: function render() {
+            var props = this.props;
+            var title = props.title || 'Add to existing collection';
+            var cancelMsg = props.cancelMsg || 'Cancel';
+
+            return _react2.default.createElement(
+                _Overlay2.default,
+                _extends({}, props, { className: "collection-overlay " + props.className, isDrawer: true }),
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    title
+                ),
+                props.onExit && _react2.default.createElement(
+                    'a',
+                    { key: 'edit-collection-cancel', className: 'cancel',
+                        onClick: props.onExit },
+                    cancelMsg
+                ),
+                props.children,
+                _react2.default.createElement(
+                    'div',
+                    { className: 'collection-actions', key: 'collection-overlay-actions' },
+                    props.actions
+                )
+            );
+        }
+    }]);
+
+    return CollectionOverlay;
+}(_react2.default.Component);
+
+exports.default = CollectionOverlay;
 
 /***/ }),
 /* 15 */
@@ -1104,6 +1181,12 @@ exports.default = CollectionCard;
 
 /***/ }),
 /* 17 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1121,7 +1204,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(18);
+__webpack_require__(19);
 
 var _Icon = __webpack_require__(2);
 
@@ -1209,12 +1292,6 @@ var CardDiff = function (_Component) {
 exports.default = CardDiff;
 
 /***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
@@ -1222,6 +1299,12 @@ exports.default = CardDiff;
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1237,7 +1320,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(21);
+__webpack_require__(22);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1286,13 +1369,13 @@ var CardList = function (_Component) {
 exports.default = CardList;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1361,7 +1444,7 @@ CardWithLocation.defaultProps = {
 exports.default = CardWithLocation;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1377,7 +1460,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(24);
+__webpack_require__(25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1443,12 +1526,6 @@ var Checkbox = function (_Component) {
 exports.default = Checkbox;
 
 /***/ }),
-/* 24 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 25 */
 /***/ (function(module, exports) {
 
@@ -1456,6 +1533,12 @@ exports.default = Checkbox;
 
 /***/ }),
 /* 26 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1471,7 +1554,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(27);
+__webpack_require__(28);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1514,12 +1597,6 @@ var HorizontalList = function (_Component) {
 exports.default = HorizontalList;
 
 /***/ }),
-/* 27 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 28 */
 /***/ (function(module, exports) {
 
@@ -1533,6 +1610,12 @@ exports.default = HorizontalList;
 
 /***/ }),
 /* 30 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1548,7 +1631,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(31);
+__webpack_require__(32);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1592,13 +1675,13 @@ var LinkList = function (_Component) {
 exports.default = LinkList;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1612,7 +1695,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(33);
+__webpack_require__(34);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1627,13 +1710,13 @@ var ListHeader = function ListHeader(props) {
 exports.default = ListHeader;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1647,7 +1730,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(35);
+__webpack_require__(36);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1667,13 +1750,13 @@ exports.default = function (props) {
 };
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1693,7 +1776,7 @@ var _SearchInput = __webpack_require__(11);
 
 var _SearchInput2 = _interopRequireDefault(_SearchInput);
 
-__webpack_require__(38);
+__webpack_require__(39);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1744,12 +1827,6 @@ var SearchForm = function (_Component) {
 exports.default = SearchForm;
 
 /***/ }),
-/* 37 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 38 */
 /***/ (function(module, exports) {
 
@@ -1775,6 +1852,12 @@ exports.default = SearchForm;
 
 /***/ }),
 /* 42 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1792,7 +1875,7 @@ var _Overlay = __webpack_require__(4);
 
 var _Overlay2 = _interopRequireDefault(_Overlay);
 
-__webpack_require__(43);
+__webpack_require__(44);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1811,13 +1894,13 @@ var Toast = function Toast(props) {
 exports.default = Toast;
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1895,13 +1978,13 @@ CtaDrawer.defaultProps = {
 exports.default = CtaDrawer;
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1935,11 +2018,11 @@ var _CollectionCard = __webpack_require__(13);
 
 var _CollectionCard2 = _interopRequireDefault(_CollectionCard);
 
-var _Overlay = __webpack_require__(4);
+var _CollectionOverlay = __webpack_require__(14);
 
-var _Overlay2 = _interopRequireDefault(_Overlay);
+var _CollectionOverlay2 = _interopRequireDefault(_CollectionOverlay);
 
-__webpack_require__(47);
+__webpack_require__(49);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2006,9 +2089,12 @@ var CollectionEditorOverlay = function (_React$Component) {
 			var body,
 			    props = this.props,
 			    state = this.state,
+			    editTitle = props.editTitle || "Edit collection",
+			    createTitle = props.createTitle || "Create collection",
 			    description = state.description || props.description,
 			    thumbnail = state.thumbnail || props.thumbnail,
-			    title = state.title || props.title;
+			    title = state.title || props.title,
+			    overlayTitle = title ? editTitle : createTitle;
 
 			if (!state.waiting && state.title !== undefined) {
 				body = _react2.default.createElement(
@@ -2036,8 +2122,8 @@ var CollectionEditorOverlay = function (_React$Component) {
 				body = _react2.default.createElement(_IntermediateState2.default, null);
 			}
 			return _react2.default.createElement(
-				_Overlay2.default,
-				_extends({}, props, { className: 'collection-editor-overlay', isDrawer: true }),
+				_CollectionOverlay2.default,
+				_extends({}, props, { className: 'collection-editor-overlay', title: overlayTitle, onExit: false }),
 				body
 			);
 		}
@@ -2056,7 +2142,13 @@ CollectionEditorOverlay.defaultProps = {
 exports.default = CollectionEditorOverlay;
 
 /***/ }),
-/* 47 */
+/* 48 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 49 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

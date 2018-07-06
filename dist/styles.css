@@ -1,12 +1,64 @@
+.collection-overlay {
+  top: 4.02em !important;
+  bottom: 4.02em !important;
+  left: 2em !important;
+  right: 2em !important;
+}
+.collection-overlay h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+.collection-overlay ul {
+  margin-bottom: 4.02em;
+  overflow: auto;
+  bottom: 0;
+  position: absolute;
+  top: 60px;
+  left: 1em;
+  right: 1em;
+  font-size: 0.7em;
+}
+.collection-overlay li {
+  cursor: pointer;
+  border-top: solid 1px #cccccc;
+  font-size: 1.4em;
+  padding: 16px 50px 0 0;
+  position: relative;
+  overflow: hidden;
+  margin: 12px 0 0;
+  text-align: left;
+}
+.collection-overlay .overlay-content {
+  overflow: hidden;
+}
+.collection-overlay .mw-ui-icon {
+  position: absolute;
+  right: -10px;
+  top: 30%;
+}
+.collection-overlay .cancel {
+  cursor: pointer;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+.collection-overlay .collection-actions {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
 .drawer.collection-editor-overlay {
-  top: 0.3em;
-  bottom: 0.3em;
-  left: 2em;
-  right: 2em;
-  overflow: scroll;
+  overflow: hidden;
   background: #fff;
   text-align: left;
   padding-top: 8px;
+  width: auto;
+}
+.drawer.collection-editor-overlay .content-container {
+  margin: 0;
 }
 .drawer.collection-editor-overlay label {
   margin-top: 2em;
@@ -743,8 +795,7 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
   height: 80px;
   position: relative;
   width: 100%;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .card .indicator {
   top: 0;

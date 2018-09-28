@@ -10,6 +10,7 @@
   margin-top: 0.5em;
 }
 .collection-overlay ul {
+  padding: 0;
   margin-bottom: 4.02em;
   overflow: auto;
   bottom: 0;
@@ -575,8 +576,8 @@ ul.hlist li:last-child {
   margin-right: 0;
 }
 .hlist {
-  margin: 0 !important;
-  padding: 0 0 8px 0 !important;
+  margin: 0;
+  padding: 0 0 8px 0;
 }
 .hlist.separated li:after {
   content: '\2022';
@@ -646,7 +647,7 @@ https://en.wikipedia.org/w/load.php?debug=false&lang=en&modules=mediawiki.ui.che
   border-radius: 2px;
 }
 .mw-ui-checkbox:not( #noop ) [type='checkbox']:checked + label:before {
-  background-image: url(/w/resources/src/mediawiki.ui/components/images/checkbox-checked.png?6f2e5);
+  background-image: url(https://commons.wikimedia.org/w/resources/src/mediawiki.ui/components/images/checkbox-checked.png?6f2e5);
   background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E %3Cpath fill=%22%23fff%22 d=%22M17 7.5L9.5 15 6 11.5 4.5 13l5 5L20 7.5c-.706-.706-2.294-.706-3 0z%22/%3E %3C/svg%3E");
   -webkit-background-size: 90% 90%;
   background-size: 90% 90%;

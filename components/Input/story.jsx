@@ -10,6 +10,11 @@ storiesOf( 'Input', module )
 			<Input name="name" onInput={action( 'on-input' )} />
 		);
 	} )
+	.add( 'with autoFocus', () => {
+		return (
+			<Input name="name" onInput={action( 'on-input' )} autoFocus id="input" />
+		);
+	} )
 	.add( 'textarea', () => {
 		return (
 			<Input name="name" onInput={action( 'on-input' )} textarea={true} />

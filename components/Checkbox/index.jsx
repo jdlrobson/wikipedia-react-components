@@ -16,9 +16,10 @@ class Checkbox extends Component {
 		}
 	}
 	render() {
-		var props = this.props;
+		const props = this.props,
+			className = this.state && this.state.jsEnabled ? 'client-js ' : ' ';
 		return (
-			<span className={this.state && this.state.jsEnabled ? 'client-js' : ''}>
+			<span className={className + props.className} id={props.id}>
 				<div className="mw-ui-checkbox">
 					<input type="checkbox" name={props.name}
 						defaultChecked={props.checked}

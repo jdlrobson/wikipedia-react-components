@@ -10,6 +10,11 @@ storiesOf( 'Button', module )
 			<Button label="I am a button" />
 		);
 	} )
+	.add( 'or a child', () => {
+		return (
+			<Button id="button">I am a button</Button>
+		);
+	} )
 	.add( 'quiet', () => {
 		return (
 			<Button label="I am a quiet button" isQuiet={true} />

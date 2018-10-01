@@ -23,14 +23,14 @@ class Button extends Component {
 		} else {
 			disabled = props.disabled;
 		}
-		btnProps = {
+		btnProps = Object.assign( {}, props, {
 			className: 'mw-ui-button ' + modifiers,
 			href: props.href,
 			onClick: props.onClick,
 			disabled: disabled
-		};
-		return btnProps.href ? <a {...btnProps}>{props.label}</a> :
-			<button {...btnProps}>{props.label}</button>;
+		} );
+		return btnProps.href ? <a {...btnProps}>{props.label}{props.children}</a> :
+			<button {...btnProps}>{props.label}{props.children}</button>;
 	}
 }
 

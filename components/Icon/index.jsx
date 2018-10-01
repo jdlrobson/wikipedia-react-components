@@ -23,21 +23,21 @@ class Icon extends Component {
 			}
 		}
 
-		iconProps = {
+		iconProps = Object.assign( {}, props, {
 			className: ( props.className || '' ) + ' mw-ui-icon mw-ui-icon-' + glyph + ' mw-ui-icon-' +
 				( props.type || 'element' ),
 			href: props.href,
 			id: props.id,
 			onClick: props.onClick
-		};
+		} );
 		if ( props.small ) {
 			iconProps.className += ' mw-ui-icon-small';
 		} else if ( props.large ) {
 			iconProps.className += ' mw-ui-icon-large';
 		}
 
-		return iconProps.href ? <a {...iconProps}>{props.label}</a> :
-			<div {...iconProps}>{props.label}</div>;
+		return iconProps.href ? <a {...iconProps}>{props.label}{props.children}</a> :
+			<div {...iconProps}>{props.label}{props.children}</div>;
 	}
 }
 

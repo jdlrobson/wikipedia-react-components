@@ -1,7 +1,7 @@
 {
   "name": "wikipedia-react-components",
   "description": "wikipedia style react components",
-  "version": "1.6.15",
+  "version": "1.6.16",
   "license": "GPL-2.0+",
   "babel": {
     "presets": [
@@ -55,6 +55,7 @@
     "react-dom": "^16.5.2",
     "style-loader": "^0.20.3",
     "url-loader": "^0.6.2",
+    "url-parse": "^1.4.3",
     "wikimedia-ui-base": "github:wikimedia/WikimediaUI-Base"
   }
 }

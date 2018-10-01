@@ -260,12 +260,12 @@ var Icon = function (_Component) {
 				}
 			}
 
-			iconProps = {
+			iconProps = Object.assign({}, props, {
 				className: (props.className || '') + ' mw-ui-icon mw-ui-icon-' + glyph + ' mw-ui-icon-' + (props.type || 'element'),
 				href: props.href,
 				id: props.id,
 				onClick: props.onClick
-			};
+			});
 			if (props.small) {
 				iconProps.className += ' mw-ui-icon-small';
 			} else if (props.large) {
@@ -275,11 +275,13 @@ var Icon = function (_Component) {
 			return iconProps.href ? _react2.default.createElement(
 				'a',
 				iconProps,
-				props.label
+				props.label,
+				props.children
 			) : _react2.default.createElement(
 				'div',
 				iconProps,
-				props.label
+				props.label,
+				props.children
 			);
 		}
 	}]);
@@ -657,20 +659,22 @@ var Button = function (_Component) {
 			} else {
 				disabled = props.disabled;
 			}
-			btnProps = {
+			btnProps = Object.assign({}, props, {
 				className: 'mw-ui-button ' + modifiers,
 				href: props.href,
 				onClick: props.onClick,
 				disabled: disabled
-			};
+			});
 			return btnProps.href ? _react2.default.createElement(
 				'a',
 				btnProps,
-				props.label
+				props.label,
+				props.children
 			) : _react2.default.createElement(
 				'button',
 				btnProps,
-				props.label
+				props.label,
+				props.children
 			);
 		}
 	}]);
@@ -761,13 +765,13 @@ var Input = function Input(props) {
 	var inputProps,
 	    suffix = props.className ? ' ' + props.className : '';
 
-	inputProps = {
+	inputProps = Object.assign({}, props, {
 		className: 'mw-ui-input' + suffix,
 		placeholder: props.placeholder,
 		onInput: props.onInput,
 		disabled: props.disabled,
 		defaultValue: props.defaultValue
-	};
+	});
 
 	if (props.textarea) {
 		return _react2.default.createElement('textarea', inputProps);
@@ -1097,7 +1101,7 @@ exports.default = CollectionCard;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -1123,46 +1127,46 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var CollectionOverlay = function (_React$Component) {
-    _inherits(CollectionOverlay, _React$Component);
+	_inherits(CollectionOverlay, _React$Component);
 
-    function CollectionOverlay() {
-        _classCallCheck(this, CollectionOverlay);
+	function CollectionOverlay() {
+		_classCallCheck(this, CollectionOverlay);
 
-        return _possibleConstructorReturn(this, (CollectionOverlay.__proto__ || Object.getPrototypeOf(CollectionOverlay)).apply(this, arguments));
-    }
+		return _possibleConstructorReturn(this, (CollectionOverlay.__proto__ || Object.getPrototypeOf(CollectionOverlay)).apply(this, arguments));
+	}
 
-    _createClass(CollectionOverlay, [{
-        key: 'render',
-        value: function render() {
-            var props = this.props;
-            var title = props.title || 'Add to existing collection';
-            var cancelMsg = props.cancelMsg || 'Cancel';
+	_createClass(CollectionOverlay, [{
+		key: 'render',
+		value: function render() {
+			var props = this.props,
+			    title = props.title || 'Add to existing collection',
+			    cancelMsg = props.cancelMsg || 'Cancel';
 
-            return _react2.default.createElement(
-                _Overlay2.default,
-                _extends({}, props, { className: "collection-overlay " + props.className, isDrawer: true }),
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    title
-                ),
-                props.onExit && _react2.default.createElement(
-                    'a',
-                    { key: 'edit-collection-cancel', className: 'cancel',
-                        onClick: props.onExit },
-                    cancelMsg
-                ),
-                props.children,
-                _react2.default.createElement(
-                    'div',
-                    { className: 'collection-actions', key: 'collection-overlay-actions' },
-                    props.actions
-                )
-            );
-        }
-    }]);
+			return _react2.default.createElement(
+				_Overlay2.default,
+				_extends({}, props, { className: 'collection-overlay ' + props.className, isDrawer: true }),
+				_react2.default.createElement(
+					'h2',
+					null,
+					title
+				),
+				props.onExit && _react2.default.createElement(
+					'a',
+					{ key: 'edit-collection-cancel', className: 'cancel',
+						onClick: props.onExit },
+					cancelMsg
+				),
+				props.children,
+				_react2.default.createElement(
+					'div',
+					{ className: 'collection-actions', key: 'collection-overlay-actions' },
+					props.actions
+				)
+			);
+		}
+	}]);
 
-    return CollectionOverlay;
+	return CollectionOverlay;
 }(_react2.default.Component);
 
 exports.default = CollectionOverlay;
@@ -1500,10 +1504,11 @@ var Checkbox = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var props = this.props;
+			var props = this.props,
+			    className = this.state && this.state.jsEnabled ? 'client-js ' : ' ';
 			return _react2.default.createElement(
 				'span',
-				{ className: this.state && this.state.jsEnabled ? 'client-js' : '' },
+				{ className: className + props.className, id: props.id },
 				_react2.default.createElement(
 					'div',
 					{ className: 'mw-ui-checkbox' },
@@ -2089,8 +2094,8 @@ var CollectionEditorOverlay = function (_React$Component) {
 			var body,
 			    props = this.props,
 			    state = this.state,
-			    editTitle = props.editTitle || "Edit collection",
-			    createTitle = props.createTitle || "Create collection",
+			    editTitle = props.editTitle || 'Edit collection',
+			    createTitle = props.createTitle || 'Create collection',
 			    description = state.description || props.description,
 			    thumbnail = state.thumbnail || props.thumbnail,
 			    title = state.title || props.title,

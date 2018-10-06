@@ -36,7 +36,7 @@ class Card extends Component {
 		if ( title ) {
 			heading = (
 				<h3>
-					<a title={title} href={url}>{title}</a>
+					<a title={title} href={url}><span>{title}</span></a>
 				</h3>
 			);
 		} else {

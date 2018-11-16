@@ -23,9 +23,11 @@ import CtaDrawer from './CtaDrawer';
 import CollectionCard from './CollectionCard';
 import CollectionEditorOverlay from './CollectionEditorOverlay';
 import CollectionOverlay from './CollectionOverlay';
+import RadioSelectInput from './RadioSelectInput';
 
 export {
 	Button, Icon, Input, Checkbox,
+	RadioSelectInput,
 	Card,
 	CollectionCard, CollectionEditorOverlay, CollectionOverlay,
 	CtaDrawer,

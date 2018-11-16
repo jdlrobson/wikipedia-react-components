@@ -25,9 +25,9 @@ class Button extends Component {
 		}
 		btnProps = Object.assign( {}, props, {
 			className: 'mw-ui-button ' + modifiers,
-			href: props.href,
-			onClick: props.onClick,
-			disabled: disabled
+			disabled,
+			isPrimary: undefined,
+			isQuiet: undefined
 		} );
 		return btnProps.href ? <a {...btnProps}>{props.label}{props.children}</a> :
 			<button {...btnProps}>{props.label}{props.children}</button>;

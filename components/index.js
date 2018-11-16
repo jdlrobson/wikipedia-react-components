@@ -24,10 +24,12 @@ import CollectionCard from './CollectionCard';
 import CollectionEditorOverlay from './CollectionEditorOverlay';
 import CollectionOverlay from './CollectionOverlay';
 import RadioSelectInput from './RadioSelectInput';
+import DropdownWidget from './DropdownWidget';
 
 export {
 	Button, Icon, Input, Checkbox,
 	RadioSelectInput,
+	DropdownWidget,
 	Card,
 	CollectionCard, CollectionEditorOverlay, CollectionOverlay,
 	CtaDrawer,

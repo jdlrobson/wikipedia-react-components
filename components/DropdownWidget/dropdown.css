@@ -1,0 +1,16 @@
+.dropdown-widget {
+  min-height: 2.28571429em;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  padding: 0.57142857em 0.85714286em 0.5em;
+  line-height: 1;
+  position: relative;
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+  user-select: none;
+  box-sizing: border-box;
+}

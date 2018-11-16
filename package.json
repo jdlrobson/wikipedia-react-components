@@ -14,6 +14,7 @@
     "url": "https://github.com/jdlrobson/wikipedia-react-components.git"
   },
   "scripts": {
+    "test": "npm run lint",
     "start": "build-storybook -c .storybook -o .out",
     "lint": "eslint . --ext .jsx --ext .js",
     "lint:fix": "eslint . --ext .jsx --ext .js  --fix",

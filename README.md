@@ -11,6 +11,8 @@ It strives to mimic the [oojs ui style guide](https://doc.wikimedia.org/oojs-ui/
 * Components should be defined in the components/ folder.
 * Each component contains a story.jsx that explains how it can be used. Please take care to document it, and run `npm run storybook` to check it shows up as expected.
 * Make sure the component is imported and exported in components/index.js
+* Run `npm test` (and/or `npm run lint:fix`)
+* Submit your patch!
 
 That's it!
 

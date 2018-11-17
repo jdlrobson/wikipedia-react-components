@@ -8,7 +8,7 @@ const BG_PLACEHOLDER = 'linear-gradient(transparent,transparent),url(data:image/
 
 class Card extends Component {
 	render() {
-		var illustration, heading,
+		var link, illustration, heading,
 			props = this.props,
 			title = this.props.title,
 			className = this.props.className ? 'card ' + this.props.className : 'card',
@@ -31,22 +31,27 @@ class Card extends Component {
 
 		if ( this.props.thumbnail || this.props.metaInfo || this.props.showPlaceholderIllustration ) {
 			illustration = <div className="card-thumb" style={styles}>{meta}</div>;
+		} else {
+			className += ' card--no-thumb';
 		}
 
 		if ( title ) {
 			heading = (
 				<h3>
-					<a title={title} href={url}><span>{title}</span></a>
+					{title}
 				</h3>
 			);
-		} else {
-			heading = <a className="card-link" href={url} />;
+		}
+		if ( url ) {
+			link = <a className="card__link"
+				href={url} aria-hidden={true} tabIndex={props.tabIndex}></a>;
 		}
 
 		return (
 			<div className={className} onClick={props.onClick}>
 				{this.props.indicator}
 				{illustration}
+				{link}
 				<div className="card-detail">
 					{heading}
 					{extracts}
@@ -57,6 +62,7 @@ class Card extends Component {
 }
 
 Card.defaultProps = {
+	isClickable: true,
 	showPlaceholderIllustration: true,
 	url: null,
 	title: null,

@@ -1,6 +1,6 @@
 @card-bg-color: #fff;
 @card-thumb-bg-color: #eee;
-@card-text-color: #888;
+@card-text-color: #72777d;
 
 .card {
   text-align: left;
@@ -12,6 +12,23 @@
   position: relative;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.card--no-thumb {
+  padding: 8px;
+}
+
+.card__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.card + .card {
+  border-top: 0;
 }
 
 .card .indicator {

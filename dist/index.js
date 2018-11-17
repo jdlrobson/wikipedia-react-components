@@ -124,7 +124,8 @@ var Card = function (_Component) {
 	_createClass(Card, [{
 		key: 'render',
 		value: function render() {
-			var illustration,
+			var link,
+			    illustration,
 			    heading,
 			    props = this.props,
 			    title = this.props.title,
@@ -153,24 +154,20 @@ var Card = function (_Component) {
 					{ className: 'card-thumb', style: styles },
 					meta
 				);
+			} else {
+				className += ' card--no-thumb';
 			}
 
 			if (title) {
 				heading = _react2.default.createElement(
 					'h3',
 					null,
-					_react2.default.createElement(
-						'a',
-						{ title: title, href: url },
-						_react2.default.createElement(
-							'span',
-							null,
-							title
-						)
-					)
+					title
 				);
-			} else {
-				heading = _react2.default.createElement('a', { className: 'card-link', href: url });
+			}
+			if (url) {
+				link = _react2.default.createElement('a', { className: 'card__link',
+					href: url, 'aria-hidden': true, tabIndex: props.tabIndex });
 			}
 
 			return _react2.default.createElement(
@@ -178,6 +175,7 @@ var Card = function (_Component) {
 				{ className: className, onClick: props.onClick },
 				this.props.indicator,
 				illustration,
+				link,
 				_react2.default.createElement(
 					'div',
 					{ className: 'card-detail' },
@@ -192,6 +190,7 @@ var Card = function (_Component) {
 }(_react.Component);
 
 Card.defaultProps = {
+	isClickable: true,
 	showPlaceholderIllustration: true,
 	url: null,
 	title: null,

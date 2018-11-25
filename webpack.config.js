@@ -1,5 +1,4 @@
 /* global require, module, __dirname */
-var ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 
 module.exports = {
 	entry: {
@@ -14,9 +13,6 @@ module.exports = {
 		react: 'react',
 		'react-dom': 'react-dom'
 	},
-	plugins: [
-		new ExtractTextPlugin( { filename: 'styles.css', allChunks: true } )
-	],
 	resolve: {
 		extensions: [ '.js', '.jsx' ]
 	},
@@ -49,9 +45,8 @@ module.exports = {
 					limit: '25000'
 				}
 			},
-			{ test: /\.css$/, loader: ExtractTextPlugin.extract( { fallback: 'style-loader', use: [ 'css-loader' ] } ) },
-			{ test: /\.less$/, loader: ExtractTextPlugin.extract( { fallback: 'style-loader',
-				use: [ 'css-loader', 'less-loader' ] } ) }
+			{ test: /\.css$/, loader: [ 'css-loader' ] },
+			{ test: /\.less$/, loader: [ 'css-loader', 'less-loader' ] }
 		]
 	}
 };

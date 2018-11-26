@@ -1,7 +1,7 @@
 {
   "name": "wikipedia-react-components",
   "description": "wikipedia style react components",
-  "version": "1.7.1",
+  "version": "1.8.1",
   "license": "GPL-2.0+",
   "babel": {
     "presets": [
@@ -25,7 +25,6 @@
     "build-storybook": "build-storybook"
   },
   "main": "dist/index.js",
-  "style": "dist/styles.css",
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-links": "^3.4.8",
